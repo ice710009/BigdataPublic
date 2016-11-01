@@ -1,0 +1,32 @@
+{"name":"bubble", "children": [
+    {"name":"學生","description":"學生分析",
+        "children":[
+            {"name": "新生入學管道分析","address":"./student/newenrollment.php", "note":"觀看每年每種入學管道招收了多少學生"},
+			{"name": "在學與入學人數","address":"./student/test4.php","note":"每個學院、系所的在學人數趨勢"},
+			{"name": "修業狀態統計","address":"./student/dropouttest1.php", "note":"每年各學院(系所)學生修業情況統計"},
+			{"name": "入學方式與畢業完成度","address":"./student/test7.php", "note":"每年各種入學管道的學生修業情況"}
+        ]
+	},
+    {"name": "教師", "description": "教師分析",
+		"children":[
+			{"name":"專任教師","address":"./teacher/FullTimeTeacher.php","note":"每學院、系所專任教師人數分析"},
+			{"name":"兼任教師","address":"./teacher/PartTimeTeacher.php", "note":"每學院、系所兼任教師人數分析"},
+			{"name":"生師比","address":"./teacher/StudentTeacherRatio.php","note":"每學院、系所生師比例"}
+		]
+	},
+	{"name":"職員", "description":"職員分析",
+		"children":[
+			{"name":"在職職員數分析","address":"./employee/Employee.php","note":"職員數統計"}
+		]
+	},
+	{"name":"研究", "description":"Crop Data in 5 minutes grid",
+		"children":[
+			{"name":"計畫數","address":"","note":"每年各單位計畫數量"}
+		]
+	},
+	{"name":"其他校務", "description":"其它與校務相關的議題",
+		"children":[
+			{"name":"停車證發放數量","address":"","note":"每年申請的汽、機車證數量"}
+		]
+	}
+]}
