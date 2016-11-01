@@ -23,9 +23,9 @@
 							<tr>
 								<td colspan="6" bgcolor="PowderBlue">壹、校務</td>
 							</tr>
-							@foreach($organize as $r)
+							@foreach($organize as $index=>$r)
 								<tr>
-									<td width="10%" align="center">{{$r->index}}</td>
+									<td width="10%" align="center">{{$index+1}}</td>
 									<td width="65%">{{$r->name}}</td>
 									<td width="10%" align="center">{{$r->info}}</td>
 									<td width="5%" align="center"><a href={{$r->file.".pdf"}}><i class="glyphicon glyphicon-eye-open"></i></a></td>
@@ -37,9 +37,9 @@
 							<tr>
 								<td colspan="6" bgcolor="PowderBlue">貳、教師</td>
 							</tr>
-							@foreach($teacher as $r)
+							@foreach($teacher as $index=>$r)
 								<tr>
-									<td width="10%" align="center">{{$r->index}}</td>
+									<td width="10%" align="center">{{$index+1}}</td>
 									<td width="65%">{{$r->name}}</td>
 									<td width="10%" align="center">{{$r->info}}</td>
 									<td width="5%" align="center"><a href={{$r->file.".pdf"}}><i class="glyphicon glyphicon-eye-open"></i></a></td>
@@ -51,9 +51,9 @@
 							<tr>
 								<td colspan="6" bgcolor="PowderBlue">參、學生</td>
 							</tr>
-							@foreach($student as $r)
+							@foreach($student as $index=>$r)
 								<tr>
-									<td width="10%" align="center">{{$r->index}}</td>
+									<td width="10%" align="center">{{$index+1}}</td>
 									<td width="65%">{{$r->name}}</td>
 									<td width="10%" align="center">{{$r->info}}</td>
 									<td width="5%" align="center"><a href={{$r->file.".pdf"}}><i class="glyphicon glyphicon-eye-open"></i></a></td>
@@ -65,9 +65,9 @@
 							<tr>
 								<td colspan="6" bgcolor="PowderBlue">肆、研究</td>
 							</tr>
-							@foreach($research as $r)
+							@foreach($research as $index=>$r)
 								<tr>
-									<td width="10%" align="center">{{$r->index}}</td>
+									<td width="10%" align="center">{{$index+1}}</td>
 									<td width="65%">{{$r->name}}</td>
 									<td width="10%" align="center">{{$r->info}}</td>
 									<td width="5%" align="center"><a href={{$r->file.".pdf"}}><i class="glyphicon glyphicon-eye-open"></i></a></td>
@@ -79,9 +79,9 @@
 							<tr>
 								<td colspan="6" bgcolor="PowderBlue">伍、財務</td>
 							</tr>
-							@foreach($financial as $r)
+							@foreach($financial as $index=>$r)
 								<tr>
-									<td width="10%" align="center">{{$r->index}}</td>
+									<td width="10%" align="center">{{$index+1}}</td>
 									<td width="65%">{{$r->name}}</td>
 									<td width="10%" align="center">{{$r->info}}</td>
 									<td width="5%" align="center"><a href={{$r->file.".pdf"}}><i class="glyphicon glyphicon-eye-open"></i></a></td>
@@ -93,9 +93,9 @@
 							<tr>
 								<td colspan="6" bgcolor="PowderBlue">陸、職員</td>
 							</tr>
-							@foreach($staff as $r)
+							@foreach($staff as $index=>$r)
 								<tr>
-									<td width="10%" align="center">{{$r->index}}</td>
+									<td width="10%" align="center">{{$index+1}}</td>
 									<td width="65%">{{$r->name}}</td>
 									<td width="10%" align="center">{{$r->info}}</td>
 									<td width="5%" align="center"><a href={{$r->file.".pdf"}}><i class="glyphicon glyphicon-eye-open"></i></a></td>
