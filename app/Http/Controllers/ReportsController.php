@@ -45,7 +45,7 @@ class ReportsController extends Controller
 		$error = $cd->errno;
 		$info = $cd->curlInfo;
 	
-		if($result['result']){
+/*		if($result['result']){
 			foreach($result['result'] as $i => $arr)
 			{
 				if($arr['higherup'] == "000" && $arr['Name'] == $arr['director_name'])
@@ -64,7 +64,7 @@ class ReportsController extends Controller
 		}
 		
 		Session::put('permission', $permission);
-
+*/
         return view('home2', compact('result', 'result2', 'error', 'info'));
     }
 }

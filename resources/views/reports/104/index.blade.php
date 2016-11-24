@@ -4,7 +4,7 @@
 		  	<div class="row">
   			<div class="col-md-12 panel-warning">
   				<div class="content-box-header">
-					<div class="panel-title">2015年交大統計年報</div>
+					<div class="panel-title">2015年交大校務資訊摘要</div>
 				</div>
   				<div class="content-box-large box-with-header">
 
