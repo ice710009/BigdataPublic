@@ -1,4 +1,4 @@
-﻿@extends('layouts.info_public')
+﻿@extends('layouts.white')
 @section('content')
 	<div class="col-md-10">		  	
 		<div class="row">

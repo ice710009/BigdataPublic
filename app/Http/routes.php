@@ -14,6 +14,7 @@
 Route::group(['middleware' => ['web']], function () {
 	Route::auth();
 	Route::get('/home', 'HomeController@index');
+	Route::get('/mssql', 'HomeController@mssql');
     Route::get('/', 'HomeController@index');
     Route::get('/workflow', function () {
     	return view('workflow');
@@ -116,7 +117,15 @@ Route::group(['middleware' => ['web']], function () {
     	return view('info_public.oth_info.oth_info5');
     });
 	
+	/* Portal post接收 */
 	Route::post('/home', 'ReportsController@portal_post');
+	
+	/* 電子表單 */
+	Route::get('/myApply', 'ApplyController@myApply');
+	Route::resource('apply', 'ApplyController',
+                array('only' => array('create', 'store', 'show', 'update', 'destroy', 'edit')));
+	
+
 });
 
  

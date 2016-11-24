@@ -80,10 +80,10 @@ return [
     		
     	'sqlsrv' => [
     		'driver' => 'sqlsrv',
-    		'host' => '140.113.199.48', // 'sql-server-20000' Provide IP address here
+    		'host' => 'HostMSSQL', // 'sql-server-20000' Provide IP address here
     		'database' => 'master',
     		'username' => 'IRID',
-    		'password' => 'BD2016533c',
+    		'password' => 'qwer1234',
    			'prefix' => '',
     	],
 
