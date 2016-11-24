@@ -38,14 +38,14 @@ class ApplyController extends Controller
 			$form2_block2_sub3 = Form_column::where('form', '=', '2')->where('block', '=', '2')->where('sub_block', '=', '3')->orderBy('index')->get();
 			
 			$form3_block2_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '2')->where('sub_block', '=', '1')->orderBy('index')->get();
-			$form3_block3_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '3')->where('sub_block', '=', '1')->orderBy('index')->get();
+//			$form3_block3_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '3')->where('sub_block', '=', '1')->orderBy('index')->get();
 			$form3_block1_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '1')->where('sub_block', '=', '1')->orderBy('index')->get();
-			$form3_block1_sub2[] = array();
-			for($i=0; $i<14; $i++)
-				$form3_block1_sub2[$i] = Form_column::where('form', '=', '3')->where('block', '=', '1')->where('sub_block', '=', $i+12)->orderBy('index')->get();
+//			$form3_block1_sub2[] = array();
+//			for($i=0; $i<14; $i++)
+//				$form3_block1_sub2[$i] = Form_column::where('form', '=', '3')->where('block', '=', '1')->where('sub_block', '=', $i+12)->orderBy('index')->get();
 			
 			return view('apply.create', compact('apply', 'form2_block1_sub1', 'form2_block2_sub1', 'form2_block2_sub2', 'form2_block2_sub3',
-																'form3_block2_sub1', 'form3_block3_sub1', 'form3_block1_sub1', 'form3_block1_sub2'))->with('CtorEd', 'create');
+																'form3_block2_sub1', 'form3_block1_sub1'))->with('CtorEd', 'create');
 	}
 	public function store(ApplyReq $request)
 	{
@@ -54,9 +54,8 @@ class ApplyController extends Controller
 				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => $request->way, 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
 				'form2_need' => '-1', 'form2_need_other' => '', 'form2_filter_enter' => '-1', 'form2_filter_id' => '-1', 'form2_filter_status' => '-1',
-				'form3_need' => '-1', 'form3_sub_0' =>' -1', 'form3_sub_1' =>' -1', 'form3_sub_2' =>' -1', 'form3_sub_3' =>' -1', 'form3_sub_4' =>' -1', 'form3_sub_5' =>' -1',
-				'form3_sub_6' =>' -1', 'form3_sub_7' =>' -1', 'form3_sub_8' =>' -1', 'form3_sub_9' =>' -1', 'form3_sub_10' =>' -1', 'form3_sub_11' =>' -1', 'form3_sub_12' =>' -1', 'form3_sub_13' =>' -1',
-				'form3_filter_no' => '-1', 'form3_filter_department' => '', 'form3_filter_title' => '', 'form3_filter_start' => '', 'form3_filter_end' => '', 'form3_filter_program' => '', 'form3_filter_financial' => '', 'form3_personal' => '-1'));
+				'form3_need' => '-1', 'form3_need_other' => '',
+				'form3_filter_no' => '-1', 'form3_filter_department' => '', 'form3_filter_title' => '', 'form3_filter_start' => '', 'form3_filter_end' => '', 'form3_filter_program' => '', 'form3_filter_financial' => ''));
 				
 				$apply -> save();
 			}
@@ -64,12 +63,14 @@ class ApplyController extends Controller
 				$apply = Apply::create(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
 				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
-				'form2_need_other' => $request->form2_need_other, 'form2_filter_enter' => $request->form2_filter_enter, 'form2_filter_id' => $request->form2_filter_id, 'form2_filter_status' => $request->form2_filter_status,
-				'form3_need' => '-1', 'form3_sub_0' =>' -1', 'form3_sub_1' =>' -1', 'form3_sub_2' =>' -1', 'form3_sub_3' =>' -1', 'form3_sub_4' =>' -1', 'form3_sub_5' =>' -1',
-				'form3_sub_6' =>' -1', 'form3_sub_7' =>' -1', 'form3_sub_8' =>' -1', 'form3_sub_9' =>' -1', 'form3_sub_10' =>' -1', 'form3_sub_11' =>' -1', 'form3_sub_12' =>' -1', 'form3_sub_13' =>' -1',
-				'form3_filter_no' => '-1', 'form3_filter_department' => '', 'form3_filter_title' => '', 'form3_filter_start' => '', 'form3_filter_end' => '', 'form3_filter_program' => '', 'form3_filter_financial' => '', 'form3_personal' => '-1'));
+				'form2_need_other' => $request->form2_need_other,
+				'form3_need' => '-1', 'form3_need_other' => '',
+				'form3_filter_no' => '-1', 'form3_filter_department' => '', 'form3_filter_title' => '', 'form3_filter_start' => '', 'form3_filter_end' => '', 'form3_filter_program' => '', 'form3_filter_financial' => ''));
 				
 				$apply->form2_need = $this->checkbox_count($request->form2_need);
+				$apply->form2_filter_enter = $this->checkbox_count($request->form2_filter_enter);
+				$apply->form2_filter_id = $this->checkbox_count($request->form2_filter_id);
+				$apply->form2_filter_status = $this->checkbox_count($request->form2_filter_status);
 				$apply -> save();
 			}
 			else{
@@ -77,25 +78,12 @@ class ApplyController extends Controller
 				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
 				'form2_need' => '-1', 'form2_need_other' => '', 'form2_filter_enter' => '-1', 'form2_filter_id' => '-1', 'form2_filter_status' => '-1',
-				'form3_filter_no' => $request->form3_filter_no, 'form3_filter_department' => $request->form3_filter_department, 'form3_filter_title' => $request->form3_filter_title, 'form3_filter_start' => $request->form3_filter_start,
-				'form3_filter_end' => $request->form3_filter_end, 'form3_filter_program' => $request->form3_filter_program, 'form3_filter_financial' => $request->form3_filter_financial));
+				'form3_filter_department' => $request->form3_filter_department, 'form3_filter_title' => $request->form3_filter_title, 'form3_filter_start' => $request->form3_filter_start,
+				'form3_filter_end' => $request->form3_filter_end, 'form3_filter_program' => $request->form3_filter_program, 'form3_filter_financial' => $request->form3_filter_financial, 'form3_need_other' => $request->form3_need_other));
 				
+				$apply->form3_filter_no = $this->checkbox_count($request->form3_filter_no);
 				$apply->form3_need = $this->checkbox_count($request->form3_need);
-				$apply->form3_sub_0 = $this->checkbox_count($request->form3_sub_0);
-				$apply->form3_sub_1 = $this->checkbox_count($request->form3_sub_1);
-				$apply->form3_sub_2 = $this->checkbox_count($request->form3_sub_2);
-				$apply->form3_sub_3 = $this->checkbox_count($request->form3_sub_3);
-				$apply->form3_sub_4 = $this->checkbox_count($request->form3_sub_4);
-				$apply->form3_sub_5 = $this->checkbox_count($request->form3_sub_5);
-				$apply->form3_sub_6 = $this->checkbox_count($request->form3_sub_6);
-				$apply->form3_sub_7 = $this->checkbox_count($request->form3_sub_7);
-				$apply->form3_sub_8 = $this->checkbox_count($request->form3_sub_8);
-				$apply->form3_sub_9 = $this->checkbox_count($request->form3_sub_9);
-				$apply->form3_sub_10 = $this->checkbox_count($request->form3_sub_10);
-				$apply->form3_sub_11 = $this->checkbox_count($request->form3_sub_11);
-				$apply->form3_sub_12 = $this->checkbox_count($request->form3_sub_12);
-				$apply->form3_sub_13 = $this->checkbox_count($request->form3_sub_13);
-				$apply->form3_personal = $this->checkbox_count($request->form3_personal);
+		
 				$apply -> save();
 			}
 		
@@ -146,8 +134,8 @@ class ApplyController extends Controller
 			->mergeCells('B12:D16')		//用途
 			->mergeCells('E12:S16')
 			
-			->mergeCells('B17:D26')		//所需項目
-			->mergeCells('E17:S26')
+//			->mergeCells('B17:D26')		//所需項目
+//			->mergeCells('E17:S26')
 			
 			->mergeCells('B27:D30')		//方法
 			->mergeCells('E27:I30')
@@ -190,7 +178,7 @@ class ApplyController extends Controller
 			->setCellValue('B11', '說明')
 			->setCellValue('E11', '基本資料受個人資料保護法保障，請謹慎使用和保管，勿外洩而觸法。')
 			->setCellValue('B12', '用途')
-			->setCellValue('B17', '所需項目')
+//			->setCellValue('B17', '所需項目')
 			->setCellValue('B27', '方法')
 			->setCellValue('J27', 'IP')
 			->setCellValue('J28', '帳號')
@@ -209,7 +197,7 @@ class ApplyController extends Controller
 			->setCellValue('Q9', $apply->name)
 			->setCellValue('Q10', $apply->phone)
 			->setCellValue('E12', $apply->purpose)
-			->setCellValue('E17', $apply->form1_need)
+//			->setCellValue('E17', $apply->form1_need)
 			->setCellValue('N27', $apply->ip)
 			->setCellValue('N28', $apply->account)
 			->setCellValue('N29', $apply->password)
@@ -227,7 +215,93 @@ class ApplyController extends Controller
 		$objExcel->setActiveSheetIndex(0)->getStyle('A1:A39')->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_NONE);
 		$objExcel->setActiveSheetIndex(0)->getStyle('B1:S8')->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_NONE);
 		$objExcel->setActiveSheetIndex(0)->getStyle('B9:S39')->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_MEDIUM);
-
+		
+		
+		if($apply->type == '0'){
+			$objExcel->setActiveSheetIndex(0)
+			->mergeCells('B17:D26')		//所需項目
+			->mergeCells('E17:S26');
+			$objExcel->setActiveSheetIndex(0)
+			->setCellValue('B17', '所需項目');
+			$objExcel->setActiveSheetIndex(0)
+			->setCellValue('E17', $apply->form1_need);
+		}
+		else if($apply->type == '1'){
+			$objExcel->setActiveSheetIndex(0)
+			->mergeCells('B17:D23')		//所需欄位
+			->mergeCells('E17:S23')
+			->mergeCells('B24:D26')		//篩選條件
+			->mergeCells('E24:I24')
+			->mergeCells('E25:I25')
+			->mergeCells('E26:I26')
+			->mergeCells('J24:S24')
+			->mergeCells('J25:S25')
+			->mergeCells('J26:S26');
+			$objExcel->setActiveSheetIndex(0)
+			->setCellValue('B17', '所需欄位')
+			->setCellValue('B24', '篩選條件')
+			->setCellValue('E24', '入學身分')
+			->setCellValue('E25', '在學身分')
+			->setCellValue('E26', '在學狀況');
+			$objExcel->setActiveSheetIndex(0)
+			->setCellValue('E17', $this->checkboxCat(2, 1, 1, 16, $apply->form2_need, $apply->form2_need_other))
+			->setCellValue('J24', $this->checkboxCat(2, 2, 1, 8, $apply->form2_need, ""))
+			->setCellValue('J25', $this->checkboxCat(2, 2, 2, 6, $apply->form2_need, ""))
+			->setCellValue('J26', $this->checkboxCat(2, 2, 3, 9, $apply->form2_need, ""));
+			
+			$objExcel->getActiveSheet()->getStyle('E24:S26')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+			$objExcel->getActiveSheet()->getStyle('E24:S26')->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+		}
+		else if($apply->type == '2'){
+			$objExcel->setActiveSheetIndex(0)
+			->mergeCells('B17:D20')		//篩選條件
+			
+			->mergeCells('E17:G17')
+			->mergeCells('E18:G18')
+			->mergeCells('E19:G19')
+			->mergeCells('E20:G20')
+			
+			->mergeCells('H17:K17')
+			->mergeCells('H18:K18')
+			->mergeCells('H19:K19')
+			->mergeCells('H20:K20')
+	
+			->mergeCells('L17:S17')
+			->mergeCells('L18:O18')
+			->mergeCells('L19:O19')
+			->mergeCells('L20:O20')
+			
+			->mergeCells('P18:S18')
+			->mergeCells('P19:S19')
+			->mergeCells('P20:S20')
+			
+			->mergeCells('B21:D26')		//所需欄位
+			->mergeCells('E21:S26');
+			
+			$objExcel->setActiveSheetIndex(0)
+			->setCellValue('B17', '篩選條件')
+			->setCellValue('E17', '員工編號')
+			->setCellValue('E18', '在職單位')
+			->setCellValue('L18', '在職職稱')
+			->setCellValue('E19', '聘用起日')
+			->setCellValue('L19', '聘用迄日')
+			->setCellValue('E20', '經費來源-計畫編號')
+			->setCellValue('L20', '經費來源-補助編號')
+			->setCellValue('B21', '所需欄位');
+			
+			$objExcel->setActiveSheetIndex(0)
+			->setCellValue('H17', $this->checkboxCat(3, 2, 1, 25, $apply->form3_filter_no, ""))
+			->setCellValue('H18', $apply->form3_filter_department)
+			->setCellValue('P18', $apply->form3_filter_title)
+			->setCellValue('H19', $apply->form3_filter_start)
+			->setCellValue('P19', $apply->form3_filter_end)
+			->setCellValue('H20', $apply->form3_filter_program)
+			->setCellValue('P20', $apply->form3_filter_financial)
+			->setCellValue('E21', $this->checkboxCat(3, 1, 1, 22, $apply->form3_need, $apply->form3_need_other));
+			
+			$objExcel->getActiveSheet()->getStyle('E17:S20')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+			$objExcel->getActiveSheet()->getStyle('E17:S20')->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+		}
 		
 		$objWriter = new PHPExcel_Writer_Excel5($objExcel);
 		$objWriteHTML = new PHPExcel_Writer_HTML($objExcel);
@@ -262,5 +336,24 @@ class ApplyController extends Controller
 				}
 			}
 			return $sum;
+	}
+	public function checkboxCat($form, $block, $sub, $n, $data, $other){
+			$check = array();
+			$result = array();
+			for ($i = 0; $i < $n; $i++){
+				if($data & 1 << $i){
+					$column = Form_column::where('form', '=', $form)->where('block', '=', $block)->where('sub_block', '=', $sub)->where('index', '=', ($i+1))->first();
+					array_push($check, $column->name);
+				}
+			}
+			$check = implode("、", $check);
+			if($other != ""){
+				array_push($result, $check);
+				array_push($result, $other);
+				$result=implode("：", $result);
+				return $result;
+			}
+			else
+				return $check;
 	}
 }

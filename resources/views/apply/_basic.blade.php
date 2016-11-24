@@ -99,23 +99,29 @@
 				<label class="col-md-2 control-label">入學身分</label>
 					<div class="col-md-10">
 					@foreach($form2_block2_sub1 as $index => $f)
-						{!!Form::radio('form2_filter_enter', $f->index)!!}{!! Form::label($f->name) !!}
+					<label class="checkbox-inline">
+						{!!Form::checkbox('form2_filter_enter['.$index.']', $index, null,  array('id'=>'form2_filter_enter['.$index.']'))!!}{!! Form::label($f->name) !!}
+					</label>
 					@endforeach
 					</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-md-2 control-label">在學身分</label>
 					<div class="col-md-10">
-						@foreach($form2_block2_sub2 as $index => $f)
-						{!!Form::radio('form2_filter_id', $f->index)!!}{!! Form::label($f->name) !!}
+					@foreach($form2_block2_sub2 as $index => $f)
+					<label class="checkbox-inline">
+						{!!Form::checkbox('form2_filter_id['.$index.']', $index, null,  array('id'=>'form2_filter_id['.$index.']'))!!}{!! Form::label($f->name) !!}
+					</label>
 					@endforeach
 					</div>
 			</div>		
 			<div class="form-group row">
 				<label class="col-md-2 control-label">在學狀況</label>
 					<div class="col-md-10">
-						@foreach($form2_block2_sub3 as $index => $f)
-						{!!Form::radio('form2_filter_status', $f->index)!!}{!! Form::label($f->name) !!}
+					@foreach($form2_block2_sub3 as $index => $f)
+					<label class="checkbox-inline">
+						{!!Form::checkbox('form2_filter_status['.$index.']', $index, null,  array('id'=>'form2_filter_status['.$index.']'))!!}{!! Form::label($f->name) !!}
+					</label>
 					@endforeach
 					</div>
 			</div>		
@@ -131,8 +137,10 @@
 		<div class="form-group row">
 			<label class="col-md-2 control-label">員工編號</label>
 				<div class="col-md-10">
-					@foreach($form3_block2_sub1 as $f) 
-					{!!Form::radio('form3_filter_no', $f->index)!!}{!! Form::label($f->name) !!}
+					@foreach($form3_block2_sub1 as $index => $f)
+					<label class="checkbox-inline">
+						{!!Form::checkbox('form3_filter_no['.$index.']', $index, null,  array('id'=>'form3_filter_no['.$index.']'))!!}{!! Form::label($f->name) !!}
+					</label>
 					@endforeach
 				</div>
 		</div>
@@ -175,50 +183,20 @@
 	</div>
 					
 	<div class="form-group">
-	<legend style="font-weight:bold;">個人基本資料</legend>
+	<legend style="font-weight:bold;">所需欄位</legend>
 		<div class="form-group row">
 			<div class="col-md-12">
-			@foreach($form3_block3_sub1 as $index => $f)
+			@foreach($form3_block1_sub1 as $index => $f)
 			<label class="checkbox-inline">
-				{!!Form::checkbox('form3_personal['.$index.']', $index, null,  array('id'=>'form3_personal['.$index.']'))!!}{!! Form::label($f->name) !!}
+				{!!Form::checkbox('form3_need['.$index.']', $index, null,  array('id'=>'form3_need['.$index.']'))!!}{!! Form::label($f->name) !!}
 			</label>
 			@endforeach
+			<label class="form-inline">
+				{!!Form::text('form3_need_other', null, array('class'=>'form-control', 'id'=>'form3_need_other'))!!}
+			</label>
 			</div>
 		</div>
 	</div>
-	
-	<div class="form-group">
-	<legend style="font-weight:bold;">所需欄位</legend>
-		
-		@foreach($form3_block1_sub1 as $index => $f)
-		@if($index < '11')
-			<label class="checkbox-inline">
-				{!!Form::checkbox('form3_need['.$index.']', $index, null,  array('id'=>'form3_need_'.$index))!!}{!! Form::label($f->name) !!}
-			</label>
-		@else
-		<div class="form-group row">
-			<div class="col-md-12">
-			<label class="checkbox-inline">
-				{!!Form::checkbox('form3_need['.$index.']', $index, null,  array('id'=>'form3_need_'.$index))!!}{!! Form::label($f->name) !!}
-			</label>
-		
-			@foreach($form3_block1_sub2 as $j => $b)
-				@if($index-11 == $j)
-				<div id = {{"sub_".$j}}>
-					@foreach($form3_block1_sub2[$j] as $k => $s)
-					<label class="checkbox-inline">
-						{!!Form::checkbox('form3_sub_'.$j.'['.$k.']', $k, null,  array('id'=>'form3_sub_'.$j.'['.$k.']'))!!}{!! Form::label($s->name) !!}
-					</label>
-					@endforeach
-				</div>	
-				@endif
-			@endforeach
-			</div>
-		</div>	
-		@endif
-		@endforeach
-	</div>
-
 	</fieldset>
 	
 	
