@@ -11,7 +11,7 @@ use Request;
 			if($tok[0] == "myApply")
 				return config('GV.myapply');
 			else if($tok[0] == "apply")
-				if($tok[1] == "create" || $tok[1] == "edit")
+				if($tok[1] == "create")
 					return config('GV.none');
 				else
 					return config('GV.myapply');

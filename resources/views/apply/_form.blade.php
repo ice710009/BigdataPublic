@@ -12,31 +12,31 @@
 		
 @section('scripts')
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="../vendors/form-helpers/css/bootstrap-formhelpers.min.css" rel="stylesheet">
-    <link href="../vendors/select/bootstrap-select.min.css" rel="stylesheet">
-    <link href="../vendors/tags/css/bootstrap-tags.css" rel="stylesheet">
-    <link href="../css/forms.css" rel="stylesheet">
+    <link href="/vendors/form-helpers/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+    <link href="/vendors/select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/vendors/tags/css/bootstrap-tags.css" rel="stylesheet">
+    <link href="/css/forms.css" rel="stylesheet">
  
-    <script src="../vendors/form-helpers/js/bootstrap-formhelpers.min.js"></script>
+    <script src="/vendors/form-helpers/js/bootstrap-formhelpers.min.js"></script>
 
-    <script src="../vendors/select/bootstrap-select.min.js"></script>
+    <script src="/vendors/select/bootstrap-select.min.js"></script>
 
-    <script src="../vendors/tags/js/bootstrap-tags.min.js"></script>
+    <script src="/vendors/tags/js/bootstrap-tags.min.js"></script>
 
-    <script src="../vendors/mask/jquery.maskedinput.min.js"></script>
+    <script src="/vendors/mask/jquery.maskedinput.min.js"></script>
 
-    <script src="../vendors/moment/moment.min.js"></script>
+    <script src="/vendors/moment/moment.min.js"></script>
 
-    <script src="../vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="/vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
 
      <!-- bootstrap-datetimepicker -->
-     <link href="../vendors/bootstrap-datetimepicker/datetimepicker.css" rel="stylesheet">
-     <script src="../vendors/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script> 
+     <link href="/vendors/bootstrap-datetimepicker/datetimepicker.css" rel="stylesheet">
+     <script src="/vendors/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script> 
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
-
+	
 <script type="text/javascript">
 
 	//choose form type
@@ -102,14 +102,62 @@ $( document ).ready(function() {
 
 
 	@if($CtorEd =='edit')//edit
-		@if($form->first_check == true)
-			$("#first_year").css("display","inline");
-		@endif
-		@if($form->second_check == true)
-			$("#second_year").css("display","inline");
-		@endif
+		//checkbox init
+		chb_init();
+	
+		//column
+		switch('{{$apply->type}}'){
+			case '0':	form_1();			break;
+			case '1':	form_2();	break;
+			case '2':	form_3();		break;
+		}	
 	@endif
 });
+	function chb_init(){
+		@if(isset($form2_need))
+		@foreach($form2_need as $key => $p)// positioning checkbox
+			@if($p)
+				document.getElementById("form2_need["+{{$key}}+"]").checked = true;
+			@endif
+		@endforeach
+		@endif
+		@if(isset($form2_filter_enter))
+		@foreach($form2_filter_enter as $key => $m)// method checkbox
+			@if($m)
+				document.getElementById("form2_filter_enter["+{{$key}}+"]").checked = true;
+			@endif
+		@endforeach
+		@endif
+		@if(isset($form2_filter_id))
+		@foreach($form2_filter_id as $key => $m)// method checkbox
+			@if($m)
+				document.getElementById("form2_filter_id["+{{$key}}+"]").checked = true;
+			@endif
+		@endforeach
+		@endif
+		@if(isset($form2_filter_status))
+		@foreach($form2_filter_status as $key => $m)// method checkbox
+			@if($m)
+				document.getElementById("form2_filter_status["+{{$key}}+"]").checked = true;
+			@endif
+		@endforeach
+		@endif
+		
+		@if(isset($form3_need))
+		@foreach($form3_need as $key => $p)// positioning checkbox
+			@if($p)
+				document.getElementById("form3_need["+{{$key}}+"]").checked = true;
+			@endif
+		@endforeach
+		@endif
+		@if(isset($form3_filter_no))
+		@foreach($form3_filter_no as $key => $m)// method checkbox
+			@if($m)
+				document.getElementById("form3_filter_no["+{{$key}}+"]").checked = true;
+			@endif
+		@endforeach
+		@endif
+	}
 
 	function form_1(){
 		$("#form1").css("display","block");

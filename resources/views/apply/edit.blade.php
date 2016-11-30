@@ -1,8 +1,8 @@
-@extends('layouts.white')
+@extends('layouts.apply')
 @section('content')
 <div class="container">
-{!! Form::model($form, ['method'=>'PATCH', 'files'=>true, 'url' => 'apply/' . $form->id]) !!}
-@include ('apply._form', ['submitButtonText' => 'Àx¦s'])
+{!! Form::model($apply, ['method'=>'PATCH', 'files'=>true, 'url' => 'apply/' . $apply->id]) !!}
+@include ('apply._form', ['submitButtonText' => 'å„²å­˜'])
 {!! Form::close() !!}
 </div>
 @endsection

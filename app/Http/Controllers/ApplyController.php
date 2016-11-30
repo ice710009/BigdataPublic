@@ -16,6 +16,7 @@ use PHPExcel_Writer_HTML;
 use PHPExcel_IOFactory;
 use PHPExcel_Style_Alignment;
 use PHPExcel_Style_Border;
+use Helpers;
 
 class ApplyController extends Controller
 {
@@ -245,9 +246,9 @@ class ApplyController extends Controller
 			->setCellValue('E26', '在學狀況');
 			$objExcel->setActiveSheetIndex(0)
 			->setCellValue('E17', $this->checkboxCat(2, 1, 1, 16, $apply->form2_need, $apply->form2_need_other))
-			->setCellValue('J24', $this->checkboxCat(2, 2, 1, 8, $apply->form2_need, ""))
-			->setCellValue('J25', $this->checkboxCat(2, 2, 2, 6, $apply->form2_need, ""))
-			->setCellValue('J26', $this->checkboxCat(2, 2, 3, 9, $apply->form2_need, ""));
+			->setCellValue('J24', $this->checkboxCat(2, 2, 1, 8, $apply->form2_filter_enter, ""))
+			->setCellValue('J25', $this->checkboxCat(2, 2, 2, 6, $apply->form2_filter_id, ""))
+			->setCellValue('J26', $this->checkboxCat(2, 2, 3, 9, $apply->form2_filter_status, ""));
 			
 			$objExcel->getActiveSheet()->getStyle('E24:S26')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 			$objExcel->getActiveSheet()->getStyle('E24:S26')->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
@@ -313,12 +314,71 @@ class ApplyController extends Controller
 	}
 	public function edit($id)
 	{
-//			$form = Teacher :: findOrFail($id);
-//			return view('newteachers.edit', compact('form'))->with('CtorEd', 'edit');
-	}
-	public function update($id, TeacherReq $request)
-	{
+			$apply = Apply :: findOrFail($id);
 	
+			$form2_block1_sub1 = Form_column::where('form', '=', '2')->where('block', '=', '1')->where('sub_block', '=', '1')->orderBy('index')->get();
+			$form2_block2_sub1 = Form_column::where('form', '=', '2')->where('block', '=', '2')->where('sub_block', '=', '1')->orderBy('index')->get();
+			$form2_block2_sub2 = Form_column::where('form', '=', '2')->where('block', '=', '2')->where('sub_block', '=', '2')->orderBy('index')->get();
+			$form2_block2_sub3 = Form_column::where('form', '=', '2')->where('block', '=', '2')->where('sub_block', '=', '3')->orderBy('index')->get();
+			$form3_block2_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '2')->where('sub_block', '=', '1')->orderBy('index')->get();
+			$form3_block1_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '1')->where('sub_block', '=', '1')->orderBy('index')->get();
+	
+			//checkbox pre-process
+			$form2_need = $this->checkboxPre($apply->form2_need, 16);
+			$form2_filter_enter = $this->checkboxPre($apply->form2_filter_enter, 8);
+			$form2_filter_id = $this->checkboxPre($apply->form2_filter_id, 6);
+			$form2_filter_status = $this->checkboxPre($apply->form2_filter_status, 9);
+			$form3_need = $this->checkboxPre($apply->form3_need, 22);
+			$form3_filter_no = $this->checkboxPre($apply->form3_filter_no, 25);
+	
+			return view('apply.edit', compact('apply', 'form2_block1_sub1', 'form2_block2_sub1', 'form2_block2_sub2', 'form2_block2_sub3',
+																'form3_block2_sub1', 'form3_block1_sub1', 'form2_need', 'form2_filter_enter', 'form2_filter_id', 'form2_filter_status', 'form3_need', 'form3_filter_no'))->with('CtorEd', 'edit');
+	}
+	public function update($id, ApplyReq $request)
+	{
+			$apply = Apply :: findOrFail($id);
+		
+			$apply->fill(array('department' => $request->department, 'fill_date' => $request->fill_date, 'name' => $request->name,  'code' => $request->code, 'reach_date' => $request->reach_date, 'note' => $request->note));
+		
+			if($request->type == '0'){
+				$apply->fill(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => $request->way, 'ip' => $request->ip, 'account' => $request->account,
+				'password' => $request->password, 'location' => $request->location,
+				'form2_need' => '-1', 'form2_need_other' => '', 'form2_filter_enter' => '-1', 'form2_filter_id' => '-1', 'form2_filter_status' => '-1',
+				'form3_need' => '-1', 'form3_need_other' => '',
+				'form3_filter_no' => '-1', 'form3_filter_department' => '', 'form3_filter_title' => '', 'form3_filter_start' => '', 'form3_filter_end' => '', 'form3_filter_program' => '', 'form3_filter_financial' => ''));
+				
+				$apply -> save();
+			}
+			else if($request->type == '1'){
+				$apply->fill(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
+				'password' => $request->password, 'location' => $request->location,
+				'form2_need_other' => $request->form2_need_other,
+				'form3_need' => '-1', 'form3_need_other' => '',
+				'form3_filter_no' => '-1', 'form3_filter_department' => '', 'form3_filter_title' => '', 'form3_filter_start' => '', 'form3_filter_end' => '', 'form3_filter_program' => '', 'form3_filter_financial' => ''));
+				
+				$apply->form2_need = $this->checkbox_count($request->form2_need);
+				$apply->form2_filter_enter = $this->checkbox_count($request->form2_filter_enter);
+				$apply->form2_filter_id = $this->checkbox_count($request->form2_filter_id);
+				$apply->form2_filter_status = $this->checkbox_count($request->form2_filter_status);
+				$apply -> save();
+			}
+			else{
+				$apply->fill(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
+				'password' => $request->password, 'location' => $request->location,
+				'form2_need' => '-1', 'form2_need_other' => '', 'form2_filter_enter' => '-1', 'form2_filter_id' => '-1', 'form2_filter_status' => '-1',
+				'form3_filter_department' => $request->form3_filter_department, 'form3_filter_title' => $request->form3_filter_title, 'form3_filter_start' => $request->form3_filter_start,
+				'form3_filter_end' => $request->form3_filter_end, 'form3_filter_program' => $request->form3_filter_program, 'form3_filter_financial' => $request->form3_filter_financial, 'form3_need_other' => $request->form3_need_other));
+				
+				$apply->form3_filter_no = $this->checkbox_count($request->form3_filter_no);
+				$apply->form3_need = $this->checkbox_count($request->form3_need);
+		
+				$apply -> save();
+			}
+		
+			return redirect('myApply');
 	}
 	public function destroy($id)
 	{
@@ -355,5 +415,14 @@ class ApplyController extends Controller
 			}
 			else
 				return $check;
+	}
+	
+	public function checkboxPre($variable , $n){
+			$ckeck = array(); 
+			for ($i = 0; $i < $n; $i++){
+				$check[$i] = $variable & 1<<$i;
+				
+			}
+			return $check;
 	}
 }

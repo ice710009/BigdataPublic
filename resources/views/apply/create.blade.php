@@ -1,8 +1,8 @@
-@extends('layouts.white')
+@extends('layouts.apply')
 @section('content')
 <div class="container">
 {!! Form::open(['url' => 'apply', 'files'=>true]) !!}
-@include ('apply._form', ['submitButtonText' => 'Àx¦s'])
+@include ('apply._form', ['submitButtonText' => 'å„²å­˜'])
 {!! Form::close() !!}
 </div>
 @endsection

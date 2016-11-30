@@ -1,5 +1,6 @@
 ﻿@extends('layouts.white')
 @section('content')
+	<div class="form-group">
 		<div class="col-md-10">		  	
 		  	<div class="row">
 				<div class="col-md-12 panel-warning">
@@ -22,6 +23,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
 @endsection
 @section('scripts')
