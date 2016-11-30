@@ -15,6 +15,8 @@ use View;
 use Config;
 use Session;
 
+
+
 class ReportsController extends Controller
 {
 	public function index($year)
@@ -34,6 +36,7 @@ class ReportsController extends Controller
     }
 	public function portal_post()
     {
+
 		$config = array(
 		'userId' => 'nctubigdata',
 		'apiKey' => '78916D21AF194A159037A9333603460DF51B333DB3804EC890E3C0FEBD00D9C3'
@@ -44,8 +47,16 @@ class ReportsController extends Controller
 		$result2 = $cd->api('/employee', 'GET', array('type'=>'depcode'));
 		$error = $cd->errno;
 		$info = $cd->curlInfo;
-	
+		
 		if($result['result']){
+			foreach($result['result'] as $i => $arr){
+				$name = $arr['Name'];
+			}
+		}
+		if($_POST['txtId'][0] == 'A'){
+			$permission =  config('GV.supervisor');
+		}
+		else if($result['result']){
 			foreach($result['result'] as $i => $arr)
 			{
 				if($arr['higherup'] == "000" && $arr['Name'] == $arr['director_name'])
@@ -64,7 +75,9 @@ class ReportsController extends Controller
 		}
 		
 		Session::put('permission', $permission);
-
+		Session::put('ID', $_POST['txtId']);
+		Session::put('NAME', $name);
+		
         return view('home2', compact('result', 'result2', 'error', 'info'));
     }
 }

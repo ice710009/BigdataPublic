@@ -17,17 +17,14 @@ use PHPExcel_IOFactory;
 use PHPExcel_Style_Alignment;
 use PHPExcel_Style_Border;
 use Helpers;
+use Session;
 
 class ApplyController extends Controller
 {
     //
 	public function myApply()
 	{
-//                $user = User::findOrFail(Auth::id());
-//                $form = Apply::where(function ( $query ) use ($user){
-//                       $query->where('user_id', '=', $user->id);
-//				})->paginate(15);
-				$apply = Apply::all();
+                $apply = Apply::where('user_id', '=', Session::get('ID'))->paginate(15);
 
                 return view('apply.myApply', compact('apply'));
 	}
@@ -39,11 +36,7 @@ class ApplyController extends Controller
 			$form2_block2_sub3 = Form_column::where('form', '=', '2')->where('block', '=', '2')->where('sub_block', '=', '3')->orderBy('index')->get();
 			
 			$form3_block2_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '2')->where('sub_block', '=', '1')->orderBy('index')->get();
-//			$form3_block3_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '3')->where('sub_block', '=', '1')->orderBy('index')->get();
 			$form3_block1_sub1 = Form_column::where('form', '=', '3')->where('block', '=', '1')->where('sub_block', '=', '1')->orderBy('index')->get();
-//			$form3_block1_sub2[] = array();
-//			for($i=0; $i<14; $i++)
-//				$form3_block1_sub2[$i] = Form_column::where('form', '=', '3')->where('block', '=', '1')->where('sub_block', '=', $i+12)->orderBy('index')->get();
 			
 			return view('apply.create', compact('apply', 'form2_block1_sub1', 'form2_block2_sub1', 'form2_block2_sub2', 'form2_block2_sub3',
 																'form3_block2_sub1', 'form3_block1_sub1'))->with('CtorEd', 'create');
@@ -51,7 +44,7 @@ class ApplyController extends Controller
 	public function store(ApplyReq $request)
 	{
 			if($request->type == '0'){
-				$apply = Apply::create(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				$apply = Apply::create(array('user_id' => Session::get('ID'), 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
 				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => $request->way, 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
 				'form2_need' => '-1', 'form2_need_other' => '', 'form2_filter_enter' => '-1', 'form2_filter_id' => '-1', 'form2_filter_status' => '-1',
@@ -61,8 +54,8 @@ class ApplyController extends Controller
 				$apply -> save();
 			}
 			else if($request->type == '1'){
-				$apply = Apply::create(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
-				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
+				$apply = Apply::create(array('user_id' => Session::get('ID'), 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => '', 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
 				'form2_need_other' => $request->form2_need_other,
 				'form3_need' => '-1', 'form3_need_other' => '',
@@ -75,8 +68,8 @@ class ApplyController extends Controller
 				$apply -> save();
 			}
 			else{
-				$apply = Apply::create(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
-				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
+				$apply = Apply::create(array('user_id' => Session::get('ID'), 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => '', 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
 				'form2_need' => '-1', 'form2_need_other' => '', 'form2_filter_enter' => '-1', 'form2_filter_id' => '-1', 'form2_filter_status' => '-1',
 				'form3_filter_department' => $request->form3_filter_department, 'form3_filter_title' => $request->form3_filter_title, 'form3_filter_start' => $request->form3_filter_start,
@@ -94,17 +87,10 @@ class ApplyController extends Controller
 	{
 		$apply = Apply :: findOrFail($id);
 		
-//		$date = substr($form->created_at, 0, 10);
-		
 		$objExcel = new PHPExcel();
 		
 		$objExcel->getProperties()
-//				 ->setCreator("Thouhedul islam")
-//			     ->setLastModifiedBy("Thouhedul islam")
 			     ->setTitle("國立交通大學資訊公開專區")
-//			     ->setSubject("新進教師鐘點減免核對表")
-//		   	     ->setDescription("This is the tutorial for PHP Excel from tisuchi.com")
-//			     ->setKeywords("office PHPExcel php")
 		      	 ->setCategory("Tutorial Result");
 					 
 		$objExcel->getActiveSheet()->getStyle('B4:S39')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
@@ -338,10 +324,10 @@ class ApplyController extends Controller
 	{
 			$apply = Apply :: findOrFail($id);
 		
-			$apply->fill(array('department' => $request->department, 'fill_date' => $request->fill_date, 'name' => $request->name,  'code' => $request->code, 'reach_date' => $request->reach_date, 'note' => $request->note));
+			$apply->fill(array('user_id' => Session::get('ID'), 'department' => $request->department, 'fill_date' => $request->fill_date, 'name' => $request->name,  'code' => $request->code, 'reach_date' => $request->reach_date, 'note' => $request->note));
 		
 			if($request->type == '0'){
-				$apply->fill(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				$apply->fill(array('type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
 				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => $request->way, 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
 				'form2_need' => '-1', 'form2_need_other' => '', 'form2_filter_enter' => '-1', 'form2_filter_id' => '-1', 'form2_filter_status' => '-1',
@@ -351,8 +337,8 @@ class ApplyController extends Controller
 				$apply -> save();
 			}
 			else if($request->type == '1'){
-				$apply->fill(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
-				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
+				$apply->fill(array('type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => '', 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
 				'form2_need_other' => $request->form2_need_other,
 				'form3_need' => '-1', 'form3_need_other' => '',
@@ -365,8 +351,8 @@ class ApplyController extends Controller
 				$apply -> save();
 			}
 			else{
-				$apply->fill(array('user_id' => '', 'type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
-				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => $request->form1_need, 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
+				$apply->fill(array('type' => $request->type, 'department' => $request->department, 'apply_date' => $request->apply_date, 'name' => $request->name,  'phone' => $request->phone,
+				'email' => $request->email, 'purpose' => $request->purpose, 'form1_need' => '', 'way' => '0', 'ip' => $request->ip, 'account' => $request->account,
 				'password' => $request->password, 'location' => $request->location,
 				'form2_need' => '-1', 'form2_need_other' => '', 'form2_filter_enter' => '-1', 'form2_filter_id' => '-1', 'form2_filter_status' => '-1',
 				'form3_filter_department' => $request->form3_filter_department, 'form3_filter_title' => $request->form3_filter_title, 'form3_filter_start' => $request->form3_filter_start,
@@ -418,11 +404,14 @@ class ApplyController extends Controller
 	}
 	
 	public function checkboxPre($variable , $n){
-			$ckeck = array(); 
-			for ($i = 0; $i < $n; $i++){
-				$check[$i] = $variable & 1<<$i;
-				
+			$ckeck = array();
+			if($variable != '-1'){
+				for ($i = 0; $i < $n; $i++){
+					$check[$i] = $variable & 1<<$i;
+				}
+				return $check;
 			}
-			return $check;
+			else
+				return null;
 	}
 }

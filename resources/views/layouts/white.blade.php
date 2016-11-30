@@ -35,6 +35,19 @@
 					@endif
 					</div>
 				</div>
+				@if(Session::get('ID') != null)
+				<div class="pull-right">
+	              <div class="navbar navbar-inverse" role="banner">
+	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+	                    <ul class="nav navbar-nav">
+	                      <li>
+	                        <a>{{ Session::get('NAME') }}({{ Session::get('ID') }}) , 您好</a>
+	                      </li>
+	                    </ul>
+	                  </nav>
+	              </div>
+	           </div>
+			   @endif
 	        </div>
 	     </div>
 	</div>
@@ -166,6 +179,7 @@
 					@endif
 					@if( Session::get('permission') == config('GV.supervisor'))
                     <li><a href="{{ url('/reportlist') }}"><i class="glyphicon glyphicon-calendar"></i> 交大歷年統計年報</a></li>
+					<li><a href="{{ url('/myApply') }}"><i class="glyphicon glyphicon-list"></i> 電子表單</a></li>
 					@endif
 				</ul>
 				@endif
