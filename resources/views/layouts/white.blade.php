@@ -172,13 +172,13 @@
 					<li><a href="{{ url('/salary_report') }}"><i class="glyphicon glyphicon-book"></i> 畢業生流向與薪資報告</a></li>
 					<li><a href="{{ url('/reportlist') }}"><i class="glyphicon glyphicon-calendar"></i> 校務資訊摘要</a></li>
 					
-					@if( Session::get('permission') > config('GV.user'))
-                    <li><a href="#"><i class="glyphicon glyphicon-record"></i> 合作議題</a></li>					
+					@if( Session::get('permission') > config('GV.user'))		
                     <li><a href="{{ url('/workflow') }}"><i class="glyphicon glyphicon-pencil"></i> 申請流程</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-list"></i> 申請校務資訊相關文件</a></li>
 					@endif
 					@if( Session::get('permission') == config('GV.supervisor'))
                     <li><a href="{{ url('/reportlist') }}"><i class="glyphicon glyphicon-calendar"></i> 交大歷年統計年報</a></li>
+					@endif
+					@if( Session::get('permission') > config('GV.user'))
 					<li><a href="{{ url('/myApply') }}"><i class="glyphicon glyphicon-list"></i> 電子表單</a></li>
 					@endif
 				</ul>

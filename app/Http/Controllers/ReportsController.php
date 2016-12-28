@@ -47,7 +47,9 @@ class ReportsController extends Controller
 		$result2 = $cd->api('/employee', 'GET', array('type'=>'depcode'));
 		$error = $cd->errno;
 		$info = $cd->curlInfo;
-		
+		Log::info($_POST['txtId']);
+		Log::info($result);
+
 		if($result['result']){
 			foreach($result['result'] as $i => $arr){
 				$name = $arr['Name'];
@@ -69,9 +71,11 @@ class ReportsController extends Controller
 					$permission =  config('GV.staff');
 				}
 			}
-		}else{
+		}
+		else{
 			Log::info("others");
 			$permission =  config('GV.user');
+			$name = $_POST['txtId'];
 		}
 		
 		Session::put('permission', $permission);
