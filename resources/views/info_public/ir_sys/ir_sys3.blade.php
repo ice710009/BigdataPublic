@@ -24,7 +24,7 @@
 					<div role="tabpanel" class="tab-pane active" id="t1">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/ir_sys/1-3-1.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>1. 近3年學生人數與變動趨勢圖</a></h4>
-							<img src="/img/info_public/ir_sys/1-3-1_1.png" alt="學生人數" width="60%"></img><br>
+							<img src="/img/info_public/ir_sys/1-3-1.png" alt="學生人數" width="60%"></img><br>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane " id="t2">
@@ -57,10 +57,10 @@
 							<h4><a href="{{ url('/info_public/ir_sys/1-3-6.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>6. 學校設備與資源</a></h4>
 							<?php
 								for($i=1; $i <= 9; $i++){
-									echo '<img src="/img/info_public/ir_sys/1-3-6/1-4-1-0'.$i.'.png" width="60%">';		
+									echo '<img src="/img/info_public/ir_sys/1-3-6/1-3-6_0'.$i.'.png" width="60%">';		
 								}		
-								for($i=10; $i <=48; $i++){
-									echo '<img src="/img/info_public/ir_sys/1-3-6/1-4-1-'.$i.'.png" width="60%">';		
+								for($i=10; $i <=50; $i++){
+									echo '<img src="/img/info_public/ir_sys/1-3-6/1-3-6_'.$i.'.png" width="60%">';		
 								}
 							?>							
 						</div>

@@ -89,7 +89,7 @@ Route::group(['middleware' => ['web']], function () {
     });
 	
 	
-	/*學雜費調整之規劃與審議程程序*/
+	/*學雜費與就學補助資訊*/
 	Route::get('/info_public/fee/fee1', function () {
     	return view('info_public.fee.fee1');
     });
@@ -115,6 +115,11 @@ Route::group(['middleware' => ['web']], function () {
     });
 	Route::get('/info_public/oth_info/oth_info5', function () {
     	return view('info_public.oth_info.oth_info5');
+    });
+	
+	/*內部內稽執行情形*/
+	Route::get('/info_public/control/control1', function () {
+    	return view('info_public.control.control1');
     });
 	
 	/* Portal post接收 */

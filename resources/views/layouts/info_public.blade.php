@@ -80,18 +80,18 @@
                     </li>
 					<li id="submenu3" class="submenu">
                     	<a href="#">
-                    		<i class="glyphicon glyphicon-credit-card"></i> 學雜費調整之規劃與審議程序
+                    		<i class="glyphicon glyphicon-credit-card"></i> 學雜費與就學補助資訊
                     		<span class="caret pull-right"></span>
                     	</a>
                     	<ul>
                             <li>
-                            	<a href="{{ url('/info_public/fee/fee1') }}">學雜費調整之用途規劃說明</a>                            	
+                            	<a href="{{ url('/info_public/fee/fee1') }}">學雜費與就學補助資訊</a>                            	
                             </li>
                             <li>
-                                <a href="{{ url('/info_public/fee/fee2') }}">學雜費調整校內審議程序說明</a>
+                                <a href="{{ url('/info_public/fee/fee2') }}">學雜費調整之用途規劃說明</a>
                             </li>
                             <li>
-                                <a href="{{ url('/info_public/fee/fee3') }}">其他補充說明</a>
+                                <a href="{{ url('/info_public/fee/fee3') }}">學雜費調整校內審議程序說明</a>
                             </li>                            
                         </ul>
                     </li>
@@ -116,6 +116,17 @@
 							<li>
                                 <a href="{{ url('/info_public/oth_info/oth_info5') }}">其他</a>
                             </li>							
+                        </ul>
+                    </li>
+					<li id="submenu5" class="submenu">
+                    	<a href="#">
+                    		<i class="glyphicon glyphicon-book"></i> 內控內稽執行情形
+                    		<span class="caret pull-right"></span>
+                    	</a>
+                    	<ul>
+                            <li>
+                            	<a href="{{ url('/info_public/control/control1') }}">內部控制制度及執行</a>                            	
+                            </li>                            			
                         </ul>
                     </li>
 					<li><a href="{{ url('/home') }}"><i class="glyphicon glyphicon-home"></i> 回首頁</a></li>                    

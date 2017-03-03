@@ -7,7 +7,7 @@
 					<div class="panel-title"><h2>校務及財務資訊公開內容架構分工表及聯絡資訊</h2></div>
 				</div>
   				<div class="panel-body">
-  					<img src="/img/contact.png" alt="校務及財務資訊公開內容架構分工表"></img><br>
+  					<img src="/img/contact.png" width = "80%" height= "80%" alt="校務及財務資訊公開內容架構分工表"></img><br>
 				</div>
   			</div>
   			</div>

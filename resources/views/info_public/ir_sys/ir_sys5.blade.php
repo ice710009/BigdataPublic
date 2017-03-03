@@ -29,26 +29,10 @@
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/ir_sys/1-5-2.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>2. 近3年畢業生流向與校友表現</a></h4>
 							<br>
-							<font face="DFKai-sb" color="#2B2B2B" size="4"><b>
-								一、各年度傑出校友與簡介<br>
-								<a href="http://www.nctu.edu.tw/outstandingnctu/greatalumni">
-									http://www.nctu.edu.tw/outstandingnctu/greatalumni
-								</a>
-							</b></font><br>
-							<font face="DFKai-sb" color="#2B2B2B" size="3">
-								資料來源：秘書室校友聯絡中心
-							</font><br>
-							<font face="DFKai-sb" color="#2B2B2B" size="4"><b>
-								二、國立交通大學近三年應屆畢業生流向調查
-							</b></font><br>
-							<font face="DFKai-sb" color="#2B2B2B" size="3">
-								資料來源：交通大學畢業生反應問卷<br>
-								執行單位：學務處就業與升學輔導組<br>
-								調查對象：交通大學 應屆畢業生
-							</font><br>
-							<img src="/img/info_public/ir_sys/1-5-2_1.png" width="38%"></img><br>
-							<img src="/img/info_public/ir_sys/1-5-2_2.png" width="38%"></img><br>
-							<img src="/img/info_public/ir_sys/1-5-2_3.png" width="38%"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_1.png" width="60%"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_2.png" width="60%"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_3.png" width="60%"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_4.png" width="60%"></img><br>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="t3">

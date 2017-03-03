@@ -34,22 +34,19 @@
 								<tr>
 									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/fund/fund1') }}" style="color:black;">1.學校收入支出分析</a></font></td>
 								</tr>
-								<tr>
-									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/fund/fund2') }}" style="color:black;">2.學雜費與就學輔助資訊</a></font></td>
-								</tr>
 							</table>							
 						</tr>
 						<tr>
-							<td><font face="DFKai-sb" color="black" size="4"><center><b>學雜費調整之規劃與審議程序</b></center></td>
+							<td><font face="DFKai-sb" color="black" size="4"><center><b>學雜費與就學輔助資訊</b></center></td>
 					　　	<td><table>
 								<tr>
-									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/fee/fee1') }}" style="color:black;">1.學雜費調整之用途規劃說明</a></font></td>
+									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/fee/fee1') }}" style="color:black;">1.學雜費與就學補助資訊</a></font></td>
 								</tr>
 								<tr>
-									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/fee/fee2') }}" style="color:black;">2.學雜費調整校內審議程序說明</a></font></td>
+									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/fee/fee2') }}" style="color:black;">2.學雜費調整之用途規劃說明</a></font></td>
 								</tr>
 								<tr>
-									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/fee/fee3') }}" style="color:black;">3.其他補充說明</a></font></td>
+									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/fee/fee3') }}" style="color:black;">3.學雜費調整校內審議程序說明</a></font></td>
 								</tr>
 							</table>							
 						</tr>
@@ -72,7 +69,15 @@
 									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/oth_info/oth_info5') }}" style="color:black;">5.其他</a></font></td>
 								</tr>
 							</table>							
-						</tr>										
+						</tr>
+						<tr>
+							<td><font face="DFKai-sb" color="black" size="4"><center><b>內控內稽執行情形</b></center></td>
+					　　	<td><table>
+								<tr>
+									<td><font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/control/control1') }}" style="color:black;">1.內部控制制度及執行</a></font></td>
+								</tr>								
+							</table>							
+						</tr>						
 					</table> 
 					<font face="DFKai-sb" color="black" size="4"><a href="{{ url('/info_public/contact') }}">分工表及聯絡資訊</a></font>
 				</div>

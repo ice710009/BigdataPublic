@@ -84,6 +84,7 @@ return [
     		'database' => 'master',
     		'username' => 'IRID',
     		'password' => 'qwer1234',
+			'charset' => 'utf8',
    			'prefix' => '',
     	],
 

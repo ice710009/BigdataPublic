@@ -4,58 +4,44 @@
 		  	<div class="row">
   			<div class="col-md-12 panel-warning">
   				<div class="content-box-header">
-					<div class="panel-title"><h2>學雜費調整校內審議程序說明</h2></div>
+					<div class="panel-title"><h2>學雜費調整之用途規劃說明</h2></div>
 				</div>
   				<div class="panel-body">
-  					<h4><a href="{{ url('/info_public/fee/3-2-1.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>學雜費調整校內審議程序說明</a></h4>
+  					<h4><a href="{{ url('/info_public/fee/3-2.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>學雜費調整之用途規劃說明</a></h4>
 					<table width="60%">
 					
 						<tr>
-					　　	<th colspan=3><font face="DFKai-sb" color="black" size="4">一、研議調整學雜費收費基準之校內決策方式、組成成員及研議程序</font></th>							
+					　　	<th colspan=2><font face="DFKai-sb" color="black" size="4">一、學雜費調整使用情況</font></th>							
 						</tr>
-						<tr><td><br></td></tr>
 						<tr>
-							<td width="2%"></td>
-							<td colspan=2><font face="DFKai-sb" color="#000080" size="4"><b>
-							一、校內決策方式：
-							</b></font></td>
-						</tr>
-						<tr><td></td></tr>
-						<tr>
-							<td width="2%"></td>
-							<td width="2%"></td>
+							<td width="4%"></td>
 					　　	<td><font face="DFKai-sb" color="black" size="4">
-								1.成立學雜費研議小組，先行規劃及研議。<br>
-								2.設置學生意見陳訴管道並舉辦公開說明會。<br>
-								3.學雜費研議小組就研議結果提校務會議討論。<br>
+								本校學雜費使用項目如下：<br>
+								1. 教師薪資、導師費等<br>
+								2. 院系所業務費及圖書儀器設備等相關費用<br>
+								3. 教室館舍維護費、水電費<br>
+								4. 學生獎助學金及工讀金<br>
 							</font></td>
 						</tr>
-						<tr><td><br></td></tr>
 						<tr>
-							<td width="2%"></td>
-							<td colspan=2><font face="DFKai-sb" color="#000080" size="4"><b>
-							二、學雜費調整研議小組之組成成員：
-							</b></font></td>
+					　　	<th colspan=2><font face="DFKai-sb" color="black" size="4">二、學雜費調整理由、計算方法</font></th>							
 						</tr>
 						<tr>
-							<td width="2%"></td>
-							<td width="2%"></td>
-					　　	<td><font face="DFKai-sb" color="black" size="4">
-								由副校長擔任召集人，主任秘書、教務長、研發長、學務長、國際長、總務長、主計室主任、各學院院長及學生會推派之大學部及研究生代表各一名組成。
+							<td width="4%"></td>
+							<td><font face="DFKai-sb" color="black" size="4">
+								本校學雜費自93學年度調漲5%後，至102學年度已有9年未調整，惟為維持研究型大學發展及運作，除維持學生獎助學金一定水準，另因師資結構調整，需延攬鼓勵優秀人才為學校服務，人事費成本相對提高，而硬體設備之圖書儀器設備投資需求亦逐年成長，隨著校舍老舊及原物料調漲等因素，相關工程經費及維修費用亦逐年增加，故學雜費調整仍有其必要性。
 							</font></td>
 						</tr>
-						<tr><td><br></td></tr>
 						<tr>
-							<td width="2%"></td>
-							<td colspan=2><font face="DFKai-sb" color="#008080" size="4"><b>
-								※專班、非全校性學分費調整，由專班或業務相關單位依專科以上學校學雜費收取辦法規定之程序辦理，並提行政會議決議。
-							</b></font></td>
+					　　	<th colspan=2><font face="DFKai-sb" color="black" size="4">三、支用計畫（包括學雜費調整後預計增加之學習資源）</font></th>							
 						</tr>
-						<tr><td><br></td></tr>
-						<tr><td><br></td></tr>
 						<tr>
-					　　	<th colspan=3><font face="DFKai-sb" color="black" size="4">二、學雜費調整研議程序之各項會議紀錄、學生意見與學校回應說明</font></th>							
+							<td width="4%"></td>
+							<td><font face="DFKai-sb" color="black" size="4">
+								本校102學年度未辦理學雜費調整，往後若進行調整，其調整後所增加之收入除將用於提昇教學品質、加強學生獎補助之措施及額度外，也將用於支應教師薪資、導師費、院系所業務及圖書儀器設備、教室館舍維護、水電費調漲增加之金額及校內各項建設。
+							</font></td>
 						</tr>
+												
 					</table> 				
 				</div>
   			</div>
