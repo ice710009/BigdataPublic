@@ -59,7 +59,7 @@
 								for($i=1; $i <= 9; $i++){
 									echo '<img src="/img/info_public/ir_sys/1-3-6/1-3-6_0'.$i.'.png" width="60%">';		
 								}		
-								for($i=10; $i <=50; $i++){
+								for($i=10; $i <=49; $i++){
 									echo '<img src="/img/info_public/ir_sys/1-3-6/1-3-6_'.$i.'.png" width="60%">';		
 								}
 							?>							

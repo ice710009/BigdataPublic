@@ -141,6 +141,9 @@
 
     <footer>
          <div class="container">
+		<div class="copy text-center">
+                       <i class="glyphicon glyphicon-info-sign"></i> 建議使用Firefox或Chrome瀏覽器開啟本網頁
+                </div>
 			<div class="copy text-center">
                <a href='http://www.nctu.edu.tw/'><i class="glyphicon glyphicon-globe"></i> 國立交通大學</a>  |  
 			   <a href='http://www.nctu.edu.tw/'><i class="glyphicon glyphicon-home"></i> 新竹市大學路1001號</a>  |  
