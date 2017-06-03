@@ -23,10 +23,10 @@
 				<div class="tab-content md-tab">
 					<div role="tabpanel" class="tab-pane active" id="t1">
 						<div class="panel-body">
-							<h4><a href="{{ url('/info_public/fee/3-1-1_105.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>1. 學校及各學院每生收費標準</a></h4>
+							<h4><a href="{{ url('/info_public/fee/3-1-1_106.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>1. 學校及各學院每生收費標準</a></h4>
 							<br>
-							<img src="/img/info_public/fee/3-1-1_105_1.png" alt="國立交通大學105學年度學雜費收費標準" width="60%"></img><br>					
-							<img src="/img/info_public/fee/3-1-1_105_2.png" alt="國立交通大學105學年度學雜費收費標準" width="60%"></img><br>					
+							<img src="/img/info_public/fee/3-1-1_106_1.png" alt="國立交通大學106學年度學雜費收費標準" width="60%"></img><br>					
+							<img src="/img/info_public/fee/3-1-1_106_2.png" alt="國立交通大學106學年度學雜費收費標準" width="60%"></img><br>					
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane " id="t2">
