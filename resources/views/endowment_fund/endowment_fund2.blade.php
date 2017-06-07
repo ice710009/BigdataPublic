@@ -6,7 +6,6 @@
   				<div class="content-box-header">
 					<div class="panel-title"><h2>績效報告書</h2></div>
 				</div>  		
-				<div>testtest</div>
   			</div>
   			</div>
   	</div>
