@@ -33,16 +33,14 @@
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/fee/3-1-2.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>2. 學校及各學院每生平均教學成本</a></h4>
 							<br>
-							<img src="/img/info_public/fee/3-1-2_1.png" alt="大學部各學院每生平均教學成本" width="60%"></img><br>					
+							<img src="/img/info_public/fee/3-1-2.png" alt="大學部各學院每生平均教學成本"></img><br>					
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="t3">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/fee/3-1-3.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>3. 學校及各學院學雜費標準占平均每生教學成本比率</a></h4>
 							<br>
-							<img src="/img/info_public/fee/3-1-3_1.png" alt="103年度各學院每生學雜費標準占平均每生教學成本比率" width="60%" height="60%"></img><br>
-							<img src="/img/info_public/fee/3-1-3_2.png" alt="102年度各學院每生學雜費標準占平均每生教學成本比率" width="60%" height="60%"></img><br>
-							<img src="/img/info_public/fee/3-1-3_3.png" alt="101年度各學院每生學雜費標準占平均每生教學成本比率" width="60%" height="60%"></img><br>					
+							<img src="/img/info_public/fee/3-1-3.png" alt="105年度各學院每生學雜費標準占平均每生教學成本比率"></img><br>						
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="t4">
