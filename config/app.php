@@ -205,6 +205,7 @@ return [
 		'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 		'Helpers'   => App\Helper\myFunctions::class,
+		'Input' => Illuminate\Support\Facades\Input::class,
     ],
 
 ];

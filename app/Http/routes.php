@@ -53,7 +53,13 @@ Route::group(['middleware' => ['web']], function () {
     	return view('reportlist');
     });
 	Route::get('/reports/{year}/index', 'ReportsController@index');
-				
+	Route::get('/reports/{year}/{category}/{no}', 'ReportsController@dashboard');
+	
+	
+	/*儀錶板*/
+	Route::get('/dashboard', function () {
+    	return view('dashboard');
+    });
 
     /*校務與財務資訊公開專區*/
 	Route::get('/infopublic', function () {
@@ -130,6 +136,19 @@ Route::group(['middleware' => ['web']], function () {
 	Route::resource('apply', 'ApplyController',
                 array('only' => array('create', 'store', 'show', 'update', 'destroy', 'edit')));
 	
+	/* 碩博士生調查 */
+	Route::get('/analysis/analysis_menu', function () {
+    	return view('analysis.analysis_menu');
+    });
+	Route::get('/analysis/_source', 'AnalysisSourceController@analysis_source');	
+	Route::get('/analysis/source/get_departments', 'AnalysisSourceController@get_departments');
+	
+	Route::get('/analysis/_status', 'AnalysisStatusController@analysis_status');
+	Route::get('/analysis/status/get_departments', 'AnalysisStatusController@get_departments');
+	Route::get('/analysis/status/get_enrolltype', 'AnalysisStatusController@get_enrolltype');
+	
+	//Route::get('/analysis/analysis_source', 'AnalysisSourceController@analysis_source');
+		
 
 });
 

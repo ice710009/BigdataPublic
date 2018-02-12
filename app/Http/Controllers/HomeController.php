@@ -49,11 +49,12 @@ class HomeController extends Controller
 		date_default_timezone_set('Asia/Taipei');
 		$Year = date("Y") - 1911;
 		$Month = date("m");
+		$Day = date("d");
 		if ($Month == 1){
 			$term = 1;
 			$Year = $Year - 1;
 		}
-		else if ($Month >= 2 && $Month <= 9){
+		else if ($Month >= 2 && ($Month <= 9 && $Day <= 13)){
 			$term = 2;
 			$Year = $Year - 1;
 		}
@@ -94,6 +95,44 @@ class HomeController extends Controller
 				$ung = $row_d['num'];
 			}
 		}
+		
+		// /*student number by academy*/
+		// $std_result_a = mssql_query("SELECT [trm_academyno], [trm_academyname] ,count([trm_stdno]) as num FROM [SOAA].[SoAA].[dbo].[vw_bigdata_term] left join [SOAA].[SoAA].[dbo].[vw_bigdata_student] on std_stdno = trm_stdno where trm_year = $Year and trm_term = $term and trm_degree = 3 and trm_studystatus <= 3 group by [trm_academyno],[trm_academyname] order by [trm_academyno],[trm_academyname]");		
+		// while ($row_a = mssql_fetch_array($std_result_a)) {
+			// if ($row_a['trm_academyno'] == '*'){
+				// $phD = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == '4'){
+				// $master = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'A'){
+				// $ung = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'B'){
+				// $ung = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'C'){
+				// $ung = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'E'){
+				// $ung = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'I'){
+				// $ung = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'K'){
+				// $ung = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'M'){
+				// $ung = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'S'){
+				// $ung = $row_d['num'];
+			// }
+			// else if ($row_a['trm_academyno'] == 'Y'){
+				// $ung = $row_d['num'];
+			// }
+		// }
 		
 		/*professor*/
 		$teacher = mssql_query("SELECT EPT, count(EPT) as num FROM [人事共同資料庫].[personnelcommon].[dbo].[vi_bigdatacenter_webhr_jobdata] where 實際離職日 = ' ' and (EPT like '%教授%' or EPT like '%講師%') group by EPT");

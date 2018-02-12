@@ -30,7 +30,7 @@
 					<div role="tabpanel" class="tab-pane " id="t2">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/ir_sys/1-3-2.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>2. 近3年教職員人數與變動趨勢圖</a></h4>
-							<img src="/img/info_public/ir_sys/1-3-2_1.png" alt="教職員人數"></img><br>
+							<img src="/img/info_public/ir_sys/1-3-2_1.png" alt="教職員人數" width="60%"></img><br>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="t3">

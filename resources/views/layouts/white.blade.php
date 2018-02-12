@@ -41,7 +41,7 @@
 	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
 	                    <ul class="nav navbar-nav">
 	                      <li>
-	                        <a>{{ Session::get('NAME') }}({{ Session::get('ID') }}) , 您好</a>
+	                        <a>{{ Session::get('DepName') }}的{{ Session::get('NAME') }}({{ Session::get('ID') }}) , 您好</a>
 	                      </li>
 	                    </ul>
 	                  </nav>
@@ -177,18 +177,22 @@
                             </li>
                         </ul>
                     </li>
-					<li><a href="{{ url('/salary_report') }}"><i class="glyphicon glyphicon-book"></i> 畢業生流向與薪資報告</a></li>
-					<li><a href="{{ url('/reportlist') }}"><i class="glyphicon glyphicon-calendar"></i> 校務資訊摘要</a></li>
+					<!-- <li><a href="{{ url('/reportlist') }}"><i class="glyphicon glyphicon-calendar"></i> 校務資訊摘要</a></li> -->
 					
 					@if( Session::get('permission') > config('GV.user'))		
-                    <li><a href="{{ url('/workflow') }}"><i class="glyphicon glyphicon-pencil"></i> 申請流程</a></li>
+                    <!--<li><a href="{{ url('/workflow') }}"><i class="glyphicon glyphicon-pencil"></i> 申請流程</a></li> -->
+					<li><a href="{{ url('/analysis/analysis_menu') }}"><i class="glyphicon glyphicon-paperclip"></i> NCTU碩博士生分析</a></li>
+					<li><a href="{{ url('/dashboard') }}"><i class="glyphicon glyphicon-paperclip"></i> 測試儀錶板</a></li>
 					@endif
-					@if( Session::get('permission') == config('GV.supervisor'))
-                    <li><a href="{{ url('/reportlist') }}"><i class="glyphicon glyphicon-calendar"></i> 交大歷年統計年報</a></li>
+					@if( Session::get('permission') >= config('GV.supervisor'))
+                    <li><a href="{{ url('/reportlist') }}"><i class="glyphicon glyphicon-calendar"></i> 交大統計年報</a></li>
+					<li><a href="{{ url('/salary_report') }}"><i class="glyphicon glyphicon-book"></i> 畢業生流向與薪資報告</a></li>					
 					@endif
+					<!--
 					@if( Session::get('permission') > config('GV.user'))
 					<li><a href="{{ url('/myApply') }}"><i class="glyphicon glyphicon-list"></i> 電子表單</a></li>
 					@endif
+					-->
 				</ul>
 				@endif
 				</div>
