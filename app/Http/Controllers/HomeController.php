@@ -54,18 +54,18 @@ class HomeController extends Controller
 			$term = 1;
 			$Year = $Year - 1;
 		}
-		else if ($Month >= 2 && ($Month <= 9 && $Day <= 13)){
+		else if ($Month >= 2 || ($Month <= 9 && $Day <= 13)){
 			$term = 2;
 			$Year = $Year - 1;
 		}
-		if ($Month <= 12){
+		else{
 			$term = 1;
 		}
 		
 		/*total student number*/				
-		$std_result = mssql_query("SELECT count(trm_stdno) as num FROM SOAA.SOAA.dbo.vw_bigdata_term left join [SOAA].[SoAA].[dbo].[vw_bigdata_student]	on std_stdno = trm_stdno where trm_year = $Year and trm_term = $term and trm_studystatus <= 3 and substring(std_stdcode, 1, 1) like '[0-9]'");
+		$std_result = mssql_query("SELECT count(trm_stdno) as num FROM [SOAA].[SoAA].[dbo].[vw_bigdata_term] left join [SOAA].[SoAA].[dbo].[vw_bigdata_student]	on std_stdno = trm_stdno where trm_year = $Year and trm_term = $term and trm_studystatus <= 3 and substring(std_stdcode, 1, 1) like '[0-9]'");
 		$row = mssql_fetch_array($std_result);
-		$num = $row['num'];
+		$num = $row['num'];	
 
 		
 		/*student number by sex*/
@@ -81,6 +81,7 @@ class HomeController extends Controller
 				$unknown = $row_s['num'];
 			}
 		}
+		
 		
 		/*student number by degree*/
 		$std_result_d = mssql_query("SELECT std_degree ,count(std_stdno) as num FROM [SOAA].[SoAA].[dbo].[vw_bigdata_term] left join [SOAA].[SoAA].[dbo].[vw_bigdata_student] on trm_stdno = std_stdno where trm_year = $Year and trm_term = $term and trm_studystatus <= 3 and substring(std_stdcode, 1, 1) like '[0-9]' group by std_degree");		
@@ -151,7 +152,7 @@ class HomeController extends Controller
 			}
 		}
 		
-		return view('home', compact('num', 'male', 'female', 'unknown', 'phD', 'master', 'ung', 'pro', 'asso_pro', 'assi_pro', 'lecturer'));
+		return view('home', compact('num', 'male', 'female', 'unknown', 'phD', 'master', 'ung', 'pro', 'asso_pro', 'assi_pro', 'lecturer', 'Year', 'term'));
 		
     }
 	
