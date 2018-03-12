@@ -11,37 +11,45 @@
 				<div role="tabpanel">
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#t1" data-toggle="tab">106年第3季可用資金變化情形</a></li>
-					<li role="presentation"><a href="#t2" data-toggle="tab">106年第2季可用資金變化情形</a></li>
-					<li role="presentation"><a href="#t3" data-toggle="tab">106年第1季可用資金變化情形</a></li>
-					<li role="presentation"><a href="#t4" data-toggle="tab">105年全年可用資金變化情形</a></li>
-					<li role="presentation"><a href="#t5" data-toggle="tab">104年全年可用資金變化情形</a></li>				
+					<li role="presentation" class="active"><a href="#t1" data-toggle="tab">106年第4季可用資金變化情形</a></li>
+					<li role="presentation"><a href="#t2" data-toggle="tab">106年第3季可用資金變化情形</a></li>
+					<li role="presentation"><a href="#t3" data-toggle="tab">106年第2季可用資金變化情形</a></li>
+					<li role="presentation"><a href="#t4" data-toggle="tab">106年第1季可用資金變化情形</a></li>
+					<li role="presentation"><a href="#t5" data-toggle="tab">105年全年可用資金變化情形</a></li>
+					<li role="presentation"><a href="#t6" data-toggle="tab">104年全年可用資金變化情形</a></li>				
 				</ul>
 				
 				<!-- Tab panes -->
 				<div class="tab-content md-tab">
-					<div role="tabpanel" class="tab-pane active" id="t1">
+					<div role="tabpanel" class="tab-pane active" id="t2">
+						<div class="panel-body">
+							<h4><a href="{{ url('/endowment_fund/endowment_fund-3-106s4.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i> 106年第4季可用資金變化情形</a></h4>
+							<br>
+							<img src="/img/endowment_fund/endowment_fund-3-106s4.png"></img>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane active" id="t2">
 						<div class="panel-body">
 							<h4><a href="{{ url('/endowment_fund/endowment_fund-3-106s3.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i> 106年第3季可用資金變化情形</a></h4>
 							<br>
 							<img src="/img/endowment_fund/endowment_fund-3-106s3.png"></img>
 						</div>
 					</div>
-					<div role="tabpanel" class="tab-pane" id="t2">
+					<div role="tabpanel" class="tab-pane" id="t3">
 						<div class="panel-body">
 							<h4><a href="{{ url('/endowment_fund/endowment_fund-3-106s2.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i> 106年第2季可用資金變化情形</a></h4>
 							<br>
 							<img src="/img/endowment_fund/endowment_fund-3-106s2.png"></img>
 						</div>
 					</div>
-					<div role="tabpanel" class="tab-pane" id="t3">
+					<div role="tabpanel" class="tab-pane" id="t4">
 						<div class="panel-body">
 							<h4><a href="{{ url('/endowment_fund/endowment_fund-3-106s1.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i> 106年第1季可用資金變化情形</a></h4>
 							<br>
 							<img src="/img/endowment_fund/endowment_fund-3-106s1.png"></img>
 						</div>
 					</div>
-					<div role="tabpanel" class="tab-pane" id="t4">
+					<div role="tabpanel" class="tab-pane" id="t5">
 						<div class="panel-body">
 							<h4><a href="{{ url('/endowment_fund/endowment_fund-3-105s4.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i> 105年第4季可用資金變化情形</a></h4><br>
 							<img src="/img/endowment_fund/endowment_fund-3-105s4.png"></img><br>
@@ -53,7 +61,7 @@
 							<img src="/img/endowment_fund/endowment_fund-3-105s1.png"></img>
 						</div>
 					</div>
-					<div role="tabpanel" class="tab-pane" id="t5">
+					<div role="tabpanel" class="tab-pane" id="t6">
 						<div class="panel-body">
 							<h4><a href="{{ url('/endowment_fund/endowment_fund-3-104s4.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i> 104年第4季可用資金變化情形</a></h4><br>
 							<img src="/img/endowment_fund/endowment_fund-3-104s4.png"></img><br>

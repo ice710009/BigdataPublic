@@ -54,7 +54,7 @@ class HomeController extends Controller
 			$term = 1;
 			$Year = $Year - 1;
 		}
-		else if ($Month >= 2 || ($Month <= 9 && $Day <= 13)){
+		else if ($Month >= 2 && $Month <= 9){
 			$term = 2;
 			$Year = $Year - 1;
 		}
