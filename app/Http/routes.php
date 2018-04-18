@@ -148,7 +148,23 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/analysis/status/get_enrolltype', 'AnalysisStatusController@get_enrolltype');
 	
 	//Route::get('/analysis/analysis_source', 'AnalysisSourceController@analysis_source');
-		
+
+    /*校務資料庫資料庫綱要*/
+	Route::get('/ir_tables/login', function () {
+    	return view('ir_tables.login');
+    });
+	Route::get('/ir_tables/actionlogin', function () {
+    	return view('ir_tables.actionlogin');
+    });
+	Route::get('/ir_tables/config', function () {
+    	return view('ir_tables.config');
+    });
+	Route::get('/ir_tables/incsession', function () {
+    	return view('ir_tables.incsession');
+    });
+	Route::get('/ir_tables/test', function () {
+    	return view('ir_tables.test');
+    });	
 
 });
 

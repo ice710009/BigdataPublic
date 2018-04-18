@@ -359,22 +359,39 @@ class AnalysisSourceController extends Controller
 		 
 		// 學年度與入學年月
 		$dt = Carbon::now();
-		$semesters = array();
-		array_push($semesters, $dt->year - 1911-5);
-		array_push($semesters, $dt->year - 1911-4);
-		array_push($semesters, $dt->year - 1911-3);
-		array_push($semesters, $dt->year - 1911-2);
-		array_push($semesters, $dt->year - 1911-1);
-		array_push($semesters, $dt->year - 1911);
-		
-		$terms = array();
-		array_push($terms, $dt->year -5 . "/09");
-		array_push($terms, $dt->year -4 . "/09");
-		array_push($terms, $dt->year -3 . "/09");
-		array_push($terms, $dt->year -2 . "/09");
-		array_push($terms, $dt->year -1 . "/09");
-		array_push($terms, $dt->year . "/09");
-		
+		$month = $dt->month;
+		if ($month <= 9){
+			$semesters = array();
+			array_push($semesters, $dt->year - 1911-5);
+			array_push($semesters, $dt->year - 1911-4);
+			array_push($semesters, $dt->year - 1911-3);
+			array_push($semesters, $dt->year - 1911-2);
+			array_push($semesters, $dt->year - 1911-1);
+			
+			$terms = array();
+			array_push($terms, $dt->year -5 . "/09");
+			array_push($terms, $dt->year -4 . "/09");
+			array_push($terms, $dt->year -3 . "/09");
+			array_push($terms, $dt->year -2 . "/09");
+			array_push($terms, $dt->year -1 . "/09");
+		}
+		else {
+			$semesters = array();
+			array_push($semesters, $dt->year - 1911-5);
+			array_push($semesters, $dt->year - 1911-4);
+			array_push($semesters, $dt->year - 1911-3);
+			array_push($semesters, $dt->year - 1911-2);
+			array_push($semesters, $dt->year - 1911-1);
+			array_push($semesters, $dt->year - 1911);
+			
+			$terms = array();
+			array_push($terms, $dt->year -5 . "/09");
+			array_push($terms, $dt->year -4 . "/09");
+			array_push($terms, $dt->year -3 . "/09");
+			array_push($terms, $dt->year -2 . "/09");
+			array_push($terms, $dt->year -1 . "/09");
+			array_push($terms, $dt->year . "/09");			
+		}				
 		
 		
 		//mssql data
@@ -385,8 +402,14 @@ class AnalysisSourceController extends Controller
 		$result = mssql_query("SET ANSI_NULLS ON;");
 		$result = mssql_query("SET ANSI_WARNINGS ON;"); 
 		
-		$start_year = $dt->year - 1911 - 5;
-		$end_year = $dt->year - 1911;
+		if ($month <= 9){
+			$start_year = $dt->year - 1911 - 5;
+			$end_year = $dt->year - 1911 - 1;
+		}
+		else{
+			$start_year = $dt->year - 1911 - 5;
+			$end_year = $dt->year - 1911;
+		}
 		
 		/* 每學年入學新生人數 */
 		$new = $this->get_new($start_year, $end_year, $dep_no);
