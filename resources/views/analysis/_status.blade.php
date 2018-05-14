@@ -73,17 +73,17 @@
 						<td align="center">{{$semester}}</td>
 						<td align="center">{{$NCTU_new_m[$i]}}</td>
 						<td align="center">{{$NCTU_m1[$i]}}</td>
-						<td align="center">{{round($NCTU_m1[$i]/$NCTU_new_m[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_m[$i]==0){{$NCTU_new_m[$i]}} @else{{round($NCTU_m1[$i]/$NCTU_new_m[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_m11[$i]}}</td>
-						<td align="center">{{round($NCTU_m11[$i]/$NCTU_new_m[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_m[$i]==0){{$NCTU_new_m[$i]}} @else{{round($NCTU_m11[$i]/$NCTU_new_m[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_m4[$i]}}</td>
-						<td align="center">{{round($NCTU_m4[$i]/$NCTU_new_m[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_m[$i]==0){{$NCTU_new_m[$i]}} @else{{round($NCTU_m4[$i]/$NCTU_new_m[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_m5[$i]}}</td>
-						<td align="center">{{round($NCTU_m5[$i]/$NCTU_new_m[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_m[$i]==0){{$NCTU_new_m[$i]}} @else{{round($NCTU_m5[$i]/$NCTU_new_m[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_m6[$i]}}</td>
-						<td align="center">{{round($NCTU_m6[$i]/$NCTU_new_m[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_m[$i]==0){{$NCTU_new_m[$i]}} @else{{round($NCTU_m6[$i]/$NCTU_new_m[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_mo[$i]}}</td>
-						<td align="center">{{round($NCTU_mo[$i]/$NCTU_new_m[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_m[$i]==0){{$NCTU_new_m[$i]}} @else{{round($NCTU_mo[$i]/$NCTU_new_m[$i],4)*100}}% @endif</td>
 					</tr>  
 				@endforeach
 				</tbody>
@@ -125,17 +125,17 @@
 						<td align="center">{{$semester}}</td>
 						<td align="center">{{$NCTU_new_p[$i]}}</td>
 						<td align="center">{{$NCTU_p1[$i]}}</td>
-						<td align="center">{{round($NCTU_p1[$i]/$NCTU_new_p[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_p[$i]==0){{$NCTU_new_p[$i]}} @else{{round($NCTU_p1[$i]/$NCTU_new_p[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_p11[$i]}}</td>
-						<td align="center">{{round($NCTU_p11[$i]/$NCTU_new_p[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_p[$i]==0){{$NCTU_new_p[$i]}} @else{{round($NCTU_p11[$i]/$NCTU_new_p[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_p4[$i]}}</td>
-						<td align="center">{{round($NCTU_p4[$i]/$NCTU_new_p[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_p[$i]==0){{$NCTU_new_p[$i]}} @else{{round($NCTU_p4[$i]/$NCTU_new_p[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_p5[$i]}}</td>
-						<td align="center">{{round($NCTU_p5[$i]/$NCTU_new_p[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_p[$i]==0){{$NCTU_new_p[$i]}} @else{{round($NCTU_p5[$i]/$NCTU_new_p[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_p6[$i]}}</td>
-						<td align="center">{{round($NCTU_p6[$i]/$NCTU_new_p[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_p[$i]==0){{$NCTU_new_p[$i]}} @else{{round($NCTU_p6[$i]/$NCTU_new_p[$i],4)*100}}% @endif</td>
 						<td align="center">{{$NCTU_po[$i]}}</td>
-						<td align="center">{{round($NCTU_po[$i]/$NCTU_new_p[$i],4)*100}}%</td>
+						<td align="center">@if($NCTU_new_p[$i]==0){{$NCTU_new_p[$i]}} @else{{round($NCTU_po[$i]/$NCTU_new_p[$i],4)*100}}% @endif</td>
 					</tr>  
 				@endforeach
 				</tbody>

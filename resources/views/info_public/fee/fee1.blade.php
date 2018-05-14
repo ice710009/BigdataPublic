@@ -70,11 +70,9 @@
 									<td>
 										<font face="DFKai-sb" size="4"> 
 										<a href="http://scahss.sa.nctu.edu.tw/?page_id=338"  style="color:#000085;">1.學務處生輔組工讀助學金資訊網頁</a><br>
-										<a href="http://parttime.nctu.edu.tw:8080/"          style="color:#000085;">2.校內工讀系統</a><br>
-										<a href="http://scahss.sa.nctu.edu.tw/?page_id=335"  style="color:#000085;">3.學務處生輔組就學貸款資訊網頁</a><br>
+										<a href="https://parttime.nctu.edu.tw/"              style="color:#000085;">2.校內工讀系統</a><br>
+										<a href="http://scahss.sa.nctu.edu.tw/?page_id=335#heading_1"  style="color:#000085;">3.學務處生輔組就學貸款資訊網頁</a><br>
 										<a href="http://scahss.sa.nctu.edu.tw/?page_id=336"  style="color:#000085;">4.學務處生輔組學雜費減免資訊網頁</a><br>
-										<a href="http://scahss.sa.nctu.edu.tw/?page_id=584"  style="color:#000085;">5.學務處生輔組生活助學金資訊網頁</a><br>
-										<a href="http://scahss.sa.nctu.edu.tw/?page_id=340"  style="color:#000085;">6.學務處生輔組獎助學金資訊網頁</a>
 										</font>
 									</td>							
 								</tr>

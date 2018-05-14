@@ -194,11 +194,42 @@
 						<td align="right">{{$m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_reco_2150[$i]}}</td>
 						<td align="right">{{$m_new_reco_51[$i]}}</td>
 						<td align="right">{{$m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_reco_2150[$i] + $m_new_reco_51[$i]}}</td>
-						<td align="right">{{round(($m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_u2p[$i])/$m_new_reco[$i],4)*100}}%</td>
-						<td align="right">{{round(($m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_reco_2150[$i] + $m_new_u2p[$i])/$m_new_reco[$i],4)*100}}%</td>
-						<td align="right">{{round(($m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_reco_2150[$i] + $m_new_u2p[$i])/$new[$i],4)*100}}%</td>
-						<td align="right">{{round($m_new_reco_51[$i]/$m_new_reco[$i],4)*100}}%</td>
-						<td align="right">{{round(($m_new_exam_UfromNCTU_R[$i] + $m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_reco_2150[$i] + $m_new_reco_51[$i] + $m_new_u2p[$i])/$new[$i],4)*100}}%</td>
+						<td align="right">
+						  @if($m_new_reco[$i] != 0)
+							{{round(($m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_u2p[$i])/$m_new_reco[$i],4)*100}}%
+						  @elseif($m_new_reco[$i] == 0)
+							0%
+						  @endif
+						</td>
+						<td align="right">
+						  @if($m_new_reco[$i] != 0)
+							{{round(($m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_reco_2150[$i] + $m_new_u2p[$i])/$m_new_reco[$i],4)*100}}%
+						  @elseif($m_new_reco[$i] == 0)
+							0%
+						  @endif
+						</td>							
+						<td align="right">
+						  @if($new[$i] != 0)
+							{{round(($m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_reco_2150[$i] + $m_new_u2p[$i])/$new[$i],4)*100}}%
+						  @elseif($new[$i] == 0)
+							0%
+						  @endif
+						</td>
+						<td align="right">
+					      @if($m_new_reco[$i] != 0)
+							{{round($m_new_reco_51[$i]/$m_new_reco[$i],4)*100}}%
+						  @elseif($m_new_reco[$i] == 0)
+							0%
+						  @endif
+						</td>
+							
+						<td align="right">
+						  @if($new[$i] != 0)
+							{{round(($m_new_exam_UfromNCTU_R[$i] + $m_new_reco_10[$i] + $m_new_reco_1120[$i] + $m_new_reco_2150[$i] + $m_new_reco_51[$i] + $m_new_u2p[$i])/$new[$i],4)*100}}%
+						  @elseif($new[$i] == 0)
+							0%
+						  @endif
+						</td>
 						<td align="right">{{$m_new_u2p[$i]}}</td>
 						@endif
 					</tr>  
@@ -251,6 +282,7 @@
 				@endforeach
 				</tbody>
 			</table>
+			<h4>*新生人數含外籍生、陸生、僑生等三種入學方式</h4>
 
 			@elseif($degree == '3')
 			<!--學院-->
