@@ -11,7 +11,7 @@
 					<h4><a href="{{ url('/info_public/ir_sys/1-2-2.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>2. 本校組織系統表</a></h4>
 					<br>
 					<font face="DFKai-sb" color="#2B2B2B" size="5"><b>學校組織架構圖</b></font><br>
-					<img src="/img/info_public/ir_sys/1-2-1_1.png" alt="學校組織架構圖" width="60%"></img><br>
+					<img src="/img/info_public/ir_sys/1-2-1.png" alt="學校組織架構圖" width="60%"></img><br>
 				</div>
   			</div>
   			</div>
