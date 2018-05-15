@@ -43,13 +43,13 @@
 					<div role="tabpanel" class="tab-pane" id="t4">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/ir_sys/1-3-4.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>4. 每生校地及校舍（或樓地板）面積</a></h4>
-							<img src="/img/info_public/ir_sys/1-3-4_1.png" alt="每生校地及校舍面積" width="60%"></img><br>
+							<img src="/img/info_public/ir_sys/1-3-4.png" alt="每生校地及校舍面積" width="60%"></img><br>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="t5">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/ir_sys/1-3-5.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>5. 學校圖書資源</a></h4>
-							<img src="/img/info_public/ir_sys/1-3-5_1.PNG" alt="學校圖書資源" width="60%"></img><br>
+							<img src="/img/info_public/ir_sys/1-3-5.png" alt="學校圖書資源" width="80%"></img><br>
 						</div>
 					</div>	
 					<div role="tabpanel" class="tab-pane" id="t6">
