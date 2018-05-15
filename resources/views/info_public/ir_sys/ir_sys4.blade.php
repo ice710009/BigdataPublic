@@ -43,6 +43,7 @@
 							</font></td>
 						</tr>
 						<tr><th><br></th></tr>
+						<!--
 						<tr>
 							<td width="4%"></td>
 							<td align="justify"><font face="DFKai-sb" color="black" size="4">
@@ -56,6 +57,7 @@
 							</font>
 							</td>
 						</tr>
+						-->
 						<tr><th><br></th></tr>
 						<tr>
 					　　	<th colspan=2><font face="DFKai-sb" color="black" size="4">3.學校SWOT分析</font></th>							
