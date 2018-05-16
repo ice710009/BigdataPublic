@@ -29,10 +29,12 @@
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/ir_sys/1-5-2.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>2. 近3年畢業生流向與校友表現</a></h4>
 							<br>
-							<img src="/img/info_public/ir_sys/1-5-2_1.png" width="60%"></img><br>
-							<img src="/img/info_public/ir_sys/1-5-2_2.png" width="60%"></img><br>
-							<img src="/img/info_public/ir_sys/1-5-2_3.png" width="60%"></img><br>
-							<img src="/img/info_public/ir_sys/1-5-2_4.png" width="60%"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2.png"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_1.png"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_2.png"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_3.png"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_4.png"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-2_5.png"></img><br>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="t3">

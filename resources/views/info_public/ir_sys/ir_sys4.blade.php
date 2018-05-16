@@ -57,8 +57,7 @@
 							</table>
 							</font>
 							</td>
-						</tr>
-						-->
+						</tr>						
 						<tr><th><br></th></tr>
 						<tr>
 					　　	<th colspan=2><font face="DFKai-sb" color="black" size="4">3.學校SWOT分析</font></th>							
@@ -69,7 +68,7 @@
 							<img src="/img/info_public/ir_sys/1-4-1.png"></img><br>
 							</td>
 						</tr>
-												
+						-->						
 					</table> 				
 				</div>
   			</div>
