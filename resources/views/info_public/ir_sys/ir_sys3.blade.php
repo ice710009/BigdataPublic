@@ -57,10 +57,10 @@
 							<h4><a href="{{ url('/info_public/ir_sys/1-3-6.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>6. 學校設備與資源</a></h4>
 							<?php
 								for($i=1; $i <= 9; $i++){
-									echo '<img src="/img/info_public/ir_sys/1-3-6/1-3-6_0'.$i.'.png" width="60%">';		
+									echo '<img src="/img/info_public/ir_sys/1-3-6/1-3-6_頁面_0'.$i.'.png" width="60%">';		
 								}		
-								for($i=10; $i <=49; $i++){
-									echo '<img src="/img/info_public/ir_sys/1-3-6/1-3-6_'.$i.'.png" width="60%">';		
+								for($i=10; $i <=54; $i++){
+									echo '<img src="/img/info_public/ir_sys/1-3-6/1-3-6_頁面_'.$i.'.png" width="60%">';		
 								}
 							?>							
 						</div>

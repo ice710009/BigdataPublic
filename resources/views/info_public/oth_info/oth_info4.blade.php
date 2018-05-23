@@ -15,8 +15,8 @@
 					<font face="DFKai-sb" color="#262626" size="4"><a href="http://timetable.nctu.edu.tw/">
 					http://timetable.nctu.edu.tw/</a></font><br><br><br>
 					<font face="DFKai-sb" color="#0000BD" size="5">(2) 師資資訊/師資專長</font><br>
-					<font face="DFKai-sb" color="#262626" size="4">（業務單位：人事室；最近更新日期:106/10/26）</font><br>
-  					<font face="DFKai-sb" color="#262626" size="4"><a href="{{ url('/info_public/oth_info/4-4-10601.xlsx') }}">
+					<font face="DFKai-sb" color="#262626" size="4">（業務單位：人事室；最近更新日期:107/03/15）</font><br>
+  					<font face="DFKai-sb" color="#262626" size="4"><a href="{{ url('/info_public/oth_info/4-4-10602.xlsx') }}">
 					<i class="glyphicon glyphicon-download-alt"></i>專兼任教師暨學術專長明細表</a></font>					
 				</div>
   			</div>

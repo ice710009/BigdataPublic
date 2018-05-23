@@ -21,8 +21,7 @@
 					<div role="tabpanel" class="tab-pane active" id="t1">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/ir_sys/1-5-1.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>1. 近3年各類評鑑結果</a></h4>
-							<img src="/img/info_public/ir_sys/1-5-1_1.png" width="50%"></img><br>
-							<img src="/img/info_public/ir_sys/1-5-1_2.png" width="50%"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-1.png" width="60%"></img><br>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane " id="t2">
@@ -40,8 +39,7 @@
 					<div role="tabpanel" class="tab-pane" id="t3">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/ir_sys/1-5-3.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>3. 其他與學校績效表現有關之訊息</a></h4>
-							<img src="/img/info_public/ir_sys/1-5-3_1.png" width="50%"></img><br>
-							<img src="/img/info_public/ir_sys/1-5-3_2.png" width="50%"></img><br>
+							<img src="/img/info_public/ir_sys/1-5-3.png" width="60%"></img><br>							
 						</div>
 					</div>
 					
