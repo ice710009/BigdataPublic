@@ -20,20 +20,20 @@
 					<div role="tabpanel" class="tab-pane active" id="t1">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/fund/2-1-1.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>1. 學校收入分析</a></h4>
+							<img src="/img/info_public/fund/2-1-1_106.png" alt="106年度學校收入分析"></img><br>					
 							<img src="/img/info_public/fund/2-1-1_105.png" alt="105年度學校收入分析"></img><br>
-							<img src="/img/info_public/fund/2-1-1_104.png" alt="104年度學校收入分析"></img><br>
-							<img src="/img/info_public/fund/2-1-1_103.png" alt="103年度學校收入分析"></img><br>					
+							<img src="/img/info_public/fund/2-1-1_104.png" alt="104年度學校收入分析"></img><br>							
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane " id="t2">
 						<div class="panel-body">
 							<h4><a href="{{ url('/info_public/fund/2-1-2.pdf') }}"><i class="glyphicon glyphicon-download-alt"></i>2. 學校支出分析</a></h4>
+							<img src="/img/info_public/fund/2-1-2_106_1.png" alt="106年度學校支出分析項目"></img><br>
+							<img src="/img/info_public/fund/2-1-2_106_2.png" alt="106年度學校支出分析圖表"></img><br>	
 							<img src="/img/info_public/fund/2-1-2_105_1.png" alt="105年度學校支出分析項目"></img><br>
 							<img src="/img/info_public/fund/2-1-2_105_2.png" alt="105年度學校支出分析圖表"></img><br>
 							<img src="/img/info_public/fund/2-1-2_104_1.png" alt="104年度學校支出分析項目"></img><br>
 							<img src="/img/info_public/fund/2-1-2_104_2.png" alt="104年度學校支出分析圖表"></img><br>
-							<img src="/img/info_public/fund/2-1-2_103_1.png" alt="103年度學校支出分析項目"></img><br>
-							<img src="/img/info_public/fund/2-1-2_103_2.png" alt="103年度學校支出分析圖表"></img><br>							
 						</div>
 					</div>
 				</div>
