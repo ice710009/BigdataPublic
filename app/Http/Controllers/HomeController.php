@@ -50,6 +50,7 @@ class HomeController extends Controller
 		$Year = date("Y") - 1911;
 		$Month = date("m");
 		$Day = date("d");
+		
 		if ($Month == 1){
 			$term = 1;
 			$Year = $Year - 1;
